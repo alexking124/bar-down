@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,18 @@
 		3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935A34A2300B25F009E3F23 /* SceneDelegate.swift */; };
 		3935A34E2300B25F009E3F23 /* Bar_Down.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3935A34C2300B25F009E3F23 /* Bar_Down.xcdatamodeld */; };
 		3935A3502300B25F009E3F23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935A34F2300B25F009E3F23 /* ContentView.swift */; };
-		3935A3522300B263009E3F23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3512300B263009E3F23 /* Assets.xcassets */; };
 		3935A3552300B263009E3F23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3542300B263009E3F23 /* Preview Assets.xcassets */; };
 		3935A3582300B263009E3F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3562300B263009E3F23 /* LaunchScreen.storyboard */; };
+		39366A8123164B51001A2907 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39366A8023164B51001A2907 /* Request.swift */; };
+		39381F922300EB5800622994 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39381F912300EB5800622994 /* Logos.xcassets */; };
+		3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B85823247BEF00145500 /* ScheduleRequest.swift */; };
+		39A1C5372318FB7900D0B897 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1C5362318FB7900D0B897 /* NetworkManager.swift */; };
+		39B75BF22300F8E500F82C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3512300B263009E3F23 /* Assets.xcassets */; };
+		39C5614C23258D9500D6B196 /* TeamsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C5614B23258D9500D6B196 /* TeamsRequest.swift */; };
+		39C561522325B3D400D6B196 /* ScoreboardTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561512325B3D400D6B196 /* ScoreboardTeamView.swift */; };
+		39C561542325B43100D6B196 /* ScoreboardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561532325B43100D6B196 /* ScoreboardPageViewController.swift */; };
+		39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */; };
+		39C561592325BA4E00D6B196 /* DateFormatterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561582325BA4E00D6B196 /* DateFormatterExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		3935A3542300B263009E3F23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3935A3572300B263009E3F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3935A3592300B263009E3F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39366A8023164B51001A2907 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		39381F912300EB5800622994 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
+		3990B85823247BEF00145500 /* ScheduleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRequest.swift; sourceTree = "<group>"; };
+		39A1C5362318FB7900D0B897 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		39C5614B23258D9500D6B196 /* TeamsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequest.swift; sourceTree = "<group>"; };
+		39C561512325B3D400D6B196 /* ScoreboardTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTeamView.swift; sourceTree = "<group>"; };
+		39C561532325B43100D6B196 /* ScoreboardPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPageViewController.swift; sourceTree = "<group>"; };
+		39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
+		39C561582325BA4E00D6B196 /* DateFormatterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,10 @@
 		3935A3472300B25F009E3F23 /* Bar Down */ = {
 			isa = PBXGroup;
 			children = (
+				39C561572325BA4100D6B196 /* Extensions */,
+				39C5614D2325B3A100D6B196 /* Views */,
+				39366A7F231646CE001A2907 /* Network */,
+				39381F902300EB4B00622994 /* Resources */,
 				3935A3482300B25F009E3F23 /* AppDelegate.swift */,
 				3935A34A2300B25F009E3F23 /* SceneDelegate.swift */,
 				3935A34F2300B25F009E3F23 /* ContentView.swift */,
@@ -76,6 +98,67 @@
 				3935A3542300B263009E3F23 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		39366A7F231646CE001A2907 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				39366A8023164B51001A2907 /* Request.swift */,
+				39A1C5362318FB7900D0B897 /* NetworkManager.swift */,
+				3990B85823247BEF00145500 /* ScheduleRequest.swift */,
+				39C5614B23258D9500D6B196 /* TeamsRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		39381F902300EB4B00622994 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				39381F912300EB5800622994 /* Logos.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		39C5614D2325B3A100D6B196 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39C561502325B3C100D6B196 /* Standings */,
+				39C5614F2325B3B900D6B196 /* Game Details */,
+				39C5614E2325B3AD00D6B196 /* Scoreboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		39C5614E2325B3AD00D6B196 /* Scoreboard */ = {
+			isa = PBXGroup;
+			children = (
+				39C561512325B3D400D6B196 /* ScoreboardTeamView.swift */,
+				39C561532325B43100D6B196 /* ScoreboardPageViewController.swift */,
+				39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */,
+			);
+			path = Scoreboard;
+			sourceTree = "<group>";
+		};
+		39C5614F2325B3B900D6B196 /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Game Details";
+			sourceTree = "<group>";
+		};
+		39C561502325B3C100D6B196 /* Standings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Standings;
+			sourceTree = "<group>";
+		};
+		39C561572325BA4100D6B196 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39C561582325BA4E00D6B196 /* DateFormatterExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +197,7 @@
 				};
 			};
 			buildConfigurationList = 3935A3402300B25F009E3F23 /* Build configuration list for PBXProject "Bar Down" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -136,9 +219,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B75BF22300F8E500F82C6D /* Assets.xcassets in Resources */,
 				3935A3582300B263009E3F23 /* LaunchScreen.storyboard in Resources */,
 				3935A3552300B263009E3F23 /* Preview Assets.xcassets in Resources */,
-				3935A3522300B263009E3F23 /* Assets.xcassets in Resources */,
+				39381F922300EB5800622994 /* Logos.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,9 +233,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C561592325BA4E00D6B196 /* DateFormatterExt.swift in Sources */,
+				39C5614C23258D9500D6B196 /* TeamsRequest.swift in Sources */,
+				39A1C5372318FB7900D0B897 /* NetworkManager.swift in Sources */,
 				3935A34E2300B25F009E3F23 /* Bar_Down.xcdatamodeld in Sources */,
 				3935A3492300B25F009E3F23 /* AppDelegate.swift in Sources */,
+				39366A8123164B51001A2907 /* Request.swift in Sources */,
+				39C561542325B43100D6B196 /* ScoreboardPageViewController.swift in Sources */,
+				39C561522325B3D400D6B196 /* ScoreboardTeamView.swift in Sources */,
+				39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */,
 				3935A3502300B25F009E3F23 /* ContentView.swift in Sources */,
+				3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */,
 				3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,13 +382,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = DUYQ44RPLQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Bar Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pryanik.Bar-Down";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pryanik.Bar-Down";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,13 +402,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = DUYQ44RPLQ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Bar Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pryanik.Bar-Down";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pryanik.Bar-Down";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

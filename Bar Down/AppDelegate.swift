@@ -8,14 +8,30 @@
 
 import UIKit
 import CoreData
+import Combine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var cancellable: AnyCancellable?
+    var cancellable2: AnyCancellable?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        cancellable = NetworkManager.shared.publisher(for: CurrentSeasonRequest()).compactMap { $0.seasons.first }.sink(receiveCompletion: { _ in }) { season in
+            print(season)
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = Locale.current.calendar.timeZone
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let seasonBeginDate = dateFormatter.date(from: "2019-10-02") ?? Date()
+        cancellable2 = NetworkManager.shared.publisher(for: ScheduleRequest(date: seasonBeginDate)).sink(receiveCompletion: { _ in }) { schedule in
+            print(schedule)
+            let rfcDateFormatter = ISO8601DateFormatter()
+            rfcDateFormatter.formatOptions = .withInternetDateTime
+            rfcDateFormatter.timeZone = Locale.current.calendar.timeZone
+            schedule.dates.flatMap { $0.games }.compactMap { $0.date }.forEach { print(rfcDateFormatter.string(from: $0)) }
+        }
         return true
     }
 
@@ -64,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Core Data Saving support
 
-    func saveContext () {
+    func saveContext() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
             do {
