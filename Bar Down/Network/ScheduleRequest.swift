@@ -36,13 +36,19 @@ struct GameDate: Codable {
     let games: [ScheduledGame]
 }
 
+struct GameStatus: Codable {
+    let abstractGameState: String
+    let codedGameState: String
+    let detailedState: String
+    let statusCode: String
+}
+
 struct ScheduledGame: Codable {
     let gamePk: Int
     let gameDate: String
+    let status: GameStatus
     
     var date: Date? {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = .withInternetDateTime
-        return formatter.date(from: gameDate)
+        return DateFormatter.gameDateFormatter.date(from: gameDate)
     }
 }

@@ -11,9 +11,20 @@ import Foundation
 enum BarDownDateFormat: String {
     case yearMonthDay = "yyyy-MM-dd"
     case gameClock = "h:mm a"
+    case displayDate = "EEE, MMM dd yyyy"
 }
 
 extension DateFormatter {
+    
+    static let gameDateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = .withInternetDateTime
+        return formatter
+    }()
+    
+    convenience init(format: BarDownDateFormat) {
+        self.init(dateFormat: format.rawValue)
+    }
     
     convenience init(dateFormat: String) {
         self.init()

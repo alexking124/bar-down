@@ -25,10 +25,13 @@ struct CurrentSeasonRequest: Request {
 }
 
 struct CurrentSeasonResponse: Decodable {
-    let seasons: [Season]
+    let seasons: [SeasonResponse]
 }
 
-struct Season: Decodable {
+struct SeasonResponse: Decodable {
     let seasonId: String
-    let numberOfGames: Int?
+    let regularSeasonStartDate: String
+    let regularSeasonEndDate: String
+    let seasonEndDate: String
+    let numberOfGames: Int
 }

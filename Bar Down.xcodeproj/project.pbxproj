@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391D086723347ADA00DAF33F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391D086623347ADA00DAF33F /* PersistenceManager.swift */; };
+		391D086923348CD600DAF33F /* NSManagedObjectContextExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */; };
 		3935A3492300B25F009E3F23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935A3482300B25F009E3F23 /* AppDelegate.swift */; };
 		3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3935A34A2300B25F009E3F23 /* SceneDelegate.swift */; };
 		3935A34E2300B25F009E3F23 /* Bar_Down.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3935A34C2300B25F009E3F23 /* Bar_Down.xcdatamodeld */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		391D086623347ADA00DAF33F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExt.swift; sourceTree = "<group>"; };
 		3935A3452300B25F009E3F23 /* Bar Down.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bar Down.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3935A3482300B25F009E3F23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3935A34A2300B25F009E3F23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		3935A3472300B25F009E3F23 /* Bar Down */ = {
 			isa = PBXGroup;
 			children = (
+				39877BD82333617D00F2CD5A /* Core Data */,
 				39C561572325BA4100D6B196 /* Extensions */,
 				39C5614D2325B3A100D6B196 /* Views */,
 				39366A7F231646CE001A2907 /* Network */,
@@ -86,7 +91,6 @@
 				3935A3512300B263009E3F23 /* Assets.xcassets */,
 				3935A3562300B263009E3F23 /* LaunchScreen.storyboard */,
 				3935A3592300B263009E3F23 /* Info.plist */,
-				3935A34C2300B25F009E3F23 /* Bar_Down.xcdatamodeld */,
 				3935A3532300B263009E3F23 /* Preview Content */,
 			);
 			path = "Bar Down";
@@ -117,6 +121,23 @@
 				39381F912300EB5800622994 /* Logos.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		39877BD82333617D00F2CD5A /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				39877BD92333618C00F2CD5A /* Models */,
+				3935A34C2300B25F009E3F23 /* Bar_Down.xcdatamodeld */,
+				391D086623347ADA00DAF33F /* PersistenceManager.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		39877BD92333618C00F2CD5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		39C5614D2325B3A100D6B196 /* Views */ = {
@@ -157,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				39C561582325BA4E00D6B196 /* DateFormatterExt.swift */,
+				391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +260,8 @@
 				39A1C5372318FB7900D0B897 /* NetworkManager.swift in Sources */,
 				3935A34E2300B25F009E3F23 /* Bar_Down.xcdatamodeld in Sources */,
 				3935A3492300B25F009E3F23 /* AppDelegate.swift in Sources */,
+				391D086923348CD600DAF33F /* NSManagedObjectContextExt.swift in Sources */,
+				391D086723347ADA00DAF33F /* PersistenceManager.swift in Sources */,
 				39366A8123164B51001A2907 /* Request.swift in Sources */,
 				39C561542325B43100D6B196 /* ScoreboardPageViewController.swift in Sources */,
 				39C561522325B3D400D6B196 /* ScoreboardTeamView.swift in Sources */,
