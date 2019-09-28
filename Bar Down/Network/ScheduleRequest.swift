@@ -36,7 +36,7 @@ struct GameDate: Codable {
     let games: [ScheduledGame]
 }
 
-struct GameStatus: Codable {
+struct GameStatusResponse: Codable {
     let abstractGameState: String
     let codedGameState: String
     let detailedState: String
@@ -46,9 +46,23 @@ struct GameStatus: Codable {
 struct ScheduledGame: Codable {
     let gamePk: Int
     let gameDate: String
-    let status: GameStatus
+    let gameType: String
+    let status: GameStatusResponse
+    let teams: ScheduledGameTeams
     
     var date: Date? {
         return DateFormatter.gameDateFormatter.date(from: gameDate)
     }
+}
+
+struct ScheduledGameTeams: Codable {
+    struct GameTeam: Codable {
+        struct Team: Codable {
+            let id: Int
+        }
+        let team: Team
+        let score: Int
+    }
+    let home: GameTeam
+    let away: GameTeam
 }

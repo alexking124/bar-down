@@ -12,16 +12,13 @@ import Combine
 import UIKit
 import CoreData
 
-class ScoreboardViewController: UIHostingController<ContentView> {
+class ScoreboardViewController: UIViewController {
     
     let date: Date
     
-    var cancellable2: Cancellable?
-    let backgroundQueue = DispatchQueue.global(qos: .utility)
-
-    init(date: Date = Date()) {
+    init?(date: Date = Date()) {
         self.date = date
-        super.init(rootView: ContentView())
+        super.init(nibName: nil, bundle: nil)
         title = DateFormatter(format: .displayDate).string(from: date)
     }
     
@@ -30,31 +27,29 @@ class ScoreboardViewController: UIHostingController<ContentView> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private lazy var hostingController: UIViewController = {
+        let context = PersistenceManager.shared.viewContext
+        let hostingController = UIHostingController(rootView: ContentView(date: date).environment(\.managedObjectContext, context))
+        return hostingController
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addChild(hostingController)
+        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(hostingController.view)
+        NSLayoutConstraint.activate([
+            hostingController.view.topAnchor.constraint(equalTo: view.topAnchor),
+            hostingController.view.leftAnchor.constraint(equalTo: view.leftAnchor),
+            hostingController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
+            hostingController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        hostingController.didMove(toParent: self)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        cancellable2 = NetworkManager.shared.publisher(for: ScheduleRequest(date: date))
-            .receive(on: backgroundQueue)
-            .sink(receiveCompletion: { _ in }) { schedule in
-                print(schedule)
-                let rfcDateFormatter = ISO8601DateFormatter()
-                rfcDateFormatter.formatOptions = .withInternetDateTime
-                rfcDateFormatter.timeZone = Locale.current.calendar.timeZone
-//                schedule.dates.flatMap { $0.games }.compactMap { $0.date }.forEach { print(rfcDateFormatter.string(from: $0)) }
-                
-                PersistenceManager.shared.persistOnBackground { objectContext in
-                    schedule.dates
-                        .flatMap { $0.games }
-                        .forEach { gameData in
-                            let fetchPredicate = NSPredicate(format: "%K = %@", "gameID", "\(gameData.gamePk)")
-                            guard let game = try? objectContext.existingObjectOrNew(predicate: fetchPredicate) as Game else {
-                                return
-                            }
-                            game.gameID = Int32(gameData.gamePk)
-                            game.gameTime = gameData.date
-                        }
-                }
-            }
+        NetworkDispatch.shared.fetchSchedule(date: date)
     }
     
 }

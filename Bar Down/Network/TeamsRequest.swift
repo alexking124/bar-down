@@ -22,5 +22,5 @@ struct TeamResponse: Codable {
     let name: String
     let abbreviation: String
     let teamName: String
-    let shortName: String
+    let locationName: String
 }

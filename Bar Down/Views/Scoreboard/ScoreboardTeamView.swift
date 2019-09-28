@@ -16,6 +16,7 @@ enum HomeAwayStatus {
 
 struct ScoreboardTeamView: View {
     
+    @ObservedObject var team: Team
     let homeAwayStatus: HomeAwayStatus
     
     var stackAlignment: HorizontalAlignment {
@@ -27,14 +28,14 @@ struct ScoreboardTeamView: View {
     
     var body: some View {
         VStack(alignment: stackAlignment, spacing: 0) {
-            Image("sjs")
+            Image(team.abbreviation?.lowercased() ?? "nhl")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 84, height: 70)
             Spacer(minLength: 8)
-            Text("San Jose")
+            Text(team.locationName ?? "")
                 .font(Font.system(size: 11, weight: .semibold, design: .default))
-            Text("Sharks")
+            Text(team.teamName ?? "")
                 .font(Font.system(size: 15, weight: .light, design: .default))
         }
     }

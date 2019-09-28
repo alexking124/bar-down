@@ -27,7 +27,9 @@ class ScoreboardPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
-        setViewControllers([ScoreboardViewController()], direction: .forward, animated: false, completion: nil)
+        if let currentScoreboardViewController = ScoreboardViewController() {
+            setViewControllers([currentScoreboardViewController], direction: .forward, animated: false, completion: nil)
+        }
         updateTitle()
     }
     
