@@ -13,6 +13,16 @@ struct TeamsRequest: Request {
     let url = URL(string: "https://statsapi.web.nhl.com/api/v1/teams")!
 }
 
+struct TeamRequest: Request {
+    typealias ResponseType = TeamsResponse
+    
+    let teamID: Int
+    
+    var url: URL {
+        URL(string: "https://statsapi.web.nhl.com/api/v1/teams/\(teamID)")!
+    }
+}
+
 struct TeamsResponse: Codable {
     let teams: [TeamResponse]
 }

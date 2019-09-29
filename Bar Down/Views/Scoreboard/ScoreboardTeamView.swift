@@ -16,8 +16,17 @@ enum HomeAwayStatus {
 
 struct ScoreboardTeamView: View {
     
-    @ObservedObject var team: Team
     let homeAwayStatus: HomeAwayStatus
+    private var fetchRequest: FetchRequest<Team>
+    private var team: FetchedResults<Team> {
+        fetchRequest.wrappedValue
+    }
+    
+    init(homeAwayStatus: HomeAwayStatus, teamID: Int) {
+        self.homeAwayStatus = homeAwayStatus
+        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "teamID", ascending: true)],
+                                    predicate: Team.fetchPredicate(teamID: teamID))
+    }
     
     var stackAlignment: HorizontalAlignment {
         switch homeAwayStatus {
@@ -28,14 +37,14 @@ struct ScoreboardTeamView: View {
     
     var body: some View {
         VStack(alignment: stackAlignment, spacing: 0) {
-            Image(team.abbreviation?.lowercased() ?? "nhl")
+            Image(team.first?.abbreviation?.lowercased() ?? "nhl")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 84, height: 70)
             Spacer(minLength: 8)
-            Text(team.locationName ?? "")
+            Text(team.first?.locationName ?? "")
                 .font(Font.system(size: 11, weight: .semibold, design: .default))
-            Text(team.teamName ?? "")
+            Text(team.first?.teamName ?? "")
                 .font(Font.system(size: 15, weight: .light, design: .default))
         }
     }

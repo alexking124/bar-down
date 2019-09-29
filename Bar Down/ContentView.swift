@@ -21,17 +21,18 @@ struct ContentView: View {
     
     init(date: Date) {
         self.date = date
-        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "gameTime", ascending: true)],
+        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "gameTime", ascending: true),
+                                                      NSSortDescriptor(key: "sortStatus", ascending: true)],
                                     predicate: Game.fetchPredicateFor(date: date))
     }
     
     var body: some View {
         return List(fetchedResults) { game in
             HStack {
-                ScoreboardTeamView(team: game.awayTeam!, homeAwayStatus: .away)
+                ScoreboardTeamView(homeAwayStatus: .away, teamID: Int(game.awayTeam?.teamID ?? 0))
                 Spacer()
-                ScoreboardTeamView(team: game.homeTeam!, homeAwayStatus: .home)
-            }
+                ScoreboardTeamView(homeAwayStatus: .home, teamID: Int(game.homeTeam?.teamID ?? 0))
+            }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
         }
     }
 }

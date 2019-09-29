@@ -24,6 +24,12 @@ class PersistenceManager {
         return persistentContainer.viewContext
     }
     
+    private lazy var workerContext: NSManagedObjectContext = {
+        let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        context.parent = viewContext
+        return context
+    }()
+    
     private func makeChildContext() -> NSManagedObjectContext {
         let child = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         child.parent = viewContext
@@ -31,8 +37,8 @@ class PersistenceManager {
     }
     
     func persistOnBackground(_ persistClosure: @escaping (NSManagedObjectContext) -> Void) {
-        let context = makeChildContext()
-        context.perform { [weak self] in
+        let context = workerContext
+        context.performAndWait { [weak self] in
             guard let self = self else { return }
             persistClosure(context)
             do {

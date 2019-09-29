@@ -10,6 +10,10 @@ import Foundation
 
 enum GameStatus: Int {
     case scheduled = 1
+    case pregame = 2
+    case live = 3
+    case critical = 4
+    case idontevenknow = 5
     case final = 6
     case reallyFinal = 7
 }

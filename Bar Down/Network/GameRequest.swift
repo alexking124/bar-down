@@ -38,9 +38,9 @@ struct LiveDataResponse: Codable {
 }
 
 struct LinescoreResponse: Codable {
-    let currentPeriod: Int
-    let currentPeriodOrdinal: String
-    let currentPeriodTimeRemaining: String
+    let currentPeriod: Int?
+    let currentPeriodOrdinal: String?
+    let currentPeriodTimeRemaining: String?
     let periods: [LinescorePeriodResponse]
     let hasShootout: Bool
     let powerPlayStrength: String
@@ -50,7 +50,7 @@ struct LinescoreResponse: Codable {
 struct IntermissionInfoResponse: Codable {
     let intermissionTimeRemaining: Int
     let intermissionTimeElapsed: Int
-    let inIntermission: Int
+    let inIntermission: Bool
 }
 
 struct LinescorePeriodResponse: Codable {

@@ -17,15 +17,19 @@ struct NetworkManager {
     
     func publisher<R: Request>(for request: R) -> AnyPublisher<R.ResponseType, URLError> {
         let urlRequest = URLRequest(url: request.url)
-        return URLSession.shared.dataTaskPublisher(for: urlRequest).compactMap { response -> R.ResponseType? in
-            do {
-//                print(try JSONSerialization.jsonObject(with: response.data, options: []))
-                return try request.deserialize(response.data)
-            } catch {
-                print(error)
-                return nil
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+//            .handleEvents(receiveCancel: {
+//                print("Request cancelled: \(urlRequest.url)")
+//            })
+            .compactMap { response -> R.ResponseType? in
+                do {
+                    return try request.deserialize(response.data)
+                } catch {
+                    print(error)
+                    return nil
+                }
             }
-        }.eraseToAnyPublisher()
+            .eraseToAnyPublisher()
     }
     
 }

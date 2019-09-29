@@ -15,7 +15,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NetworkDispatch.shared.fetchTeams()
+//        NetworkDispatch.shared.fetchTeams()
+        
+        func clearAllCoreData() {
+            let entities = self.persistentContainer.managedObjectModel.entities
+            entities.compactMap({ $0.name }).forEach(clearDeepObjectEntity)
+        }
+
+        func clearDeepObjectEntity(_ entity: String) {
+            let context = self.persistentContainer.viewContext
+
+            let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+            let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+
+            do {
+                try context.execute(deleteRequest)
+                try context.save()
+            } catch {
+                print ("There was an error")
+            }
+        }
+        clearAllCoreData()
+        
         return true
     }
 
