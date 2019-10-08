@@ -17,16 +17,17 @@ enum HomeAwayStatus {
 struct ScoreboardTeamView: View {
     
     let homeAwayStatus: HomeAwayStatus
-    private var fetchRequest: FetchRequest<Team>
-    private var team: FetchedResults<Team> {
-        fetchRequest.wrappedValue
-    }
+    @ObservedObject var team: Team
+//    private var fetchRequest: FetchRequest<Team>
+//    private var team: FetchedResults<Team> {
+//        fetchRequest.wrappedValue
+//    }
     
-    init(homeAwayStatus: HomeAwayStatus, teamID: Int) {
-        self.homeAwayStatus = homeAwayStatus
-        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "teamID", ascending: true)],
-                                    predicate: Team.fetchPredicate(teamID: teamID))
-    }
+//    init(homeAwayStatus: HomeAwayStatus, teamID: Int) {
+//        self.homeAwayStatus = homeAwayStatus
+//        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "teamID", ascending: true)],
+//                                    predicate: Team.fetchPredicate(teamID: teamID))
+//    }
     
     var stackAlignment: HorizontalAlignment {
         switch homeAwayStatus {
@@ -37,14 +38,14 @@ struct ScoreboardTeamView: View {
     
     var body: some View {
         VStack(alignment: stackAlignment, spacing: 0) {
-            Image(team.first?.abbreviation?.lowercased() ?? "nhl")
+            Image(team.abbreviation?.lowercased() ?? "nhl")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 84, height: 70)
             Spacer(minLength: 8)
-            Text(team.first?.locationName ?? "")
+            Text(team.locationName ?? "")
                 .font(Font.system(size: 11, weight: .semibold, design: .default))
-            Text(team.first?.teamName ?? "")
+            Text(team.teamName ?? "")
                 .font(Font.system(size: 15, weight: .light, design: .default))
         }
     }

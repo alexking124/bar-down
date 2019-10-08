@@ -29,9 +29,9 @@ struct ContentView: View {
     var body: some View {
         return List(fetchedResults) { game in
             HStack {
-                ScoreboardTeamView(homeAwayStatus: .away, teamID: Int(game.awayTeam?.teamID ?? 0))
+                ScoreboardTeamView(homeAwayStatus: .away, team: game.awayTeam!)
                 Spacer()
-                ScoreboardTeamView(homeAwayStatus: .home, teamID: Int(game.homeTeam?.teamID ?? 0))
+                ScoreboardTeamView(homeAwayStatus: .home, team: game.homeTeam!)
             }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
         }
     }

@@ -15,23 +15,33 @@ class NetworkDispatch {
     public static let shared = NetworkDispatch()
     
     private let fetchQueue = DispatchQueue.global(qos: .utility)
-    
+    @Published private var teamIDtoUpdate: Int = 0
     private var cancellables = Set<AnyCancellable>()
     
     private init() {
     }
-    
+        
     public func beginUpdatingLiveScores() {
         
     }
     
     private func fetchGameDetails(gamePk: Int) {
-        let cancellable = NetworkManager.shared.publisher(for: GameRequest(gameID: gamePk))
+        NetworkManager.shared.publisher(for: GameRequest(gameID: gamePk))
             .receive(on: fetchQueue)
-            .sink(receiveCompletion: { _ in }, receiveValue: { response in
+            .sink(receiveCompletion: { _ in }, receiveValue: { gameDetailsResponse in
 //                print(response.gameData.datetime)
+                PersistenceManager.shared.persistOnBackground { context in
+                    let gameFetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
+                    gameFetchRequest.predicate = Game.gameFetchPredicate(gameID: gamePk)
+                    guard let game = try? context.fetch(gameFetchRequest).first else {
+                        assertionFailure()
+                        return
+                    }
+                    
+                    game.gameStatus = Int32(gameDetailsResponse.gameData.status.codedGameState) ?? 0
+                }
             })
-        cancellable.store(in: &cancellables)
+            .store(in: &cancellables)
     }
     
     public func fetchSchedule(date: Date) {
@@ -84,18 +94,11 @@ class NetworkDispatch {
             }
             .store(in: &cancellables)
     }
-    
-    private var teamsStarted = 0
-    private var teamsReceived = 0
-    
+
     private func updateTeam(id: Int) {
-//        teamsStarted += 1
-//        print("Started \(teamsStarted)")
         NetworkManager.shared.publisher(for: TeamRequest(teamID: id))
             .receive(on: fetchQueue)
             .sink(receiveCompletion: { _ in }, receiveValue: { teamsResponse in
-//                self.teamsReceived += 1
-//                print("Received \(self.teamsReceived)")
                 PersistenceManager.shared.persistOnBackground { objectContext in
                     teamsResponse.teams.forEach { teamResponse in
                         let teamPredicate = Team.fetchPredicate(teamID: teamResponse.id)

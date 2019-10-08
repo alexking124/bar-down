@@ -38,7 +38,7 @@ class PersistenceManager {
     
     func persistOnBackground(_ persistClosure: @escaping (NSManagedObjectContext) -> Void) {
         let context = workerContext
-        context.performAndWait { [weak self] in
+        context.perform { [weak self] in
             guard let self = self else { return }
             persistClosure(context)
             do {

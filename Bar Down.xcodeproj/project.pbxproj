@@ -20,6 +20,7 @@
 		3935A3582300B263009E3F23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3562300B263009E3F23 /* LaunchScreen.storyboard */; };
 		39366A8123164B51001A2907 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39366A8023164B51001A2907 /* Request.swift */; };
 		39381F922300EB5800622994 /* Logos.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39381F912300EB5800622994 /* Logos.xcassets */; };
+		3959562023407F1400B73BB1 /* ScoreboardScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3959561F23407F1400B73BB1 /* ScoreboardScoreView.swift */; };
 		396512DD233DCE00001CEFCB /* TeamExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512DC233DCE00001CEFCB /* TeamExt.swift */; };
 		396512E0233DCE5B001CEFCB /* NHLTeamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512DF233DCE5B001CEFCB /* NHLTeamID.swift */; };
 		396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E1233F2F99001CEFCB /* GameStatus.swift */; };
@@ -51,6 +52,7 @@
 		3935A3592300B263009E3F23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39366A8023164B51001A2907 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		39381F912300EB5800622994 /* Logos.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logos.xcassets; sourceTree = "<group>"; };
+		3959561F23407F1400B73BB1 /* ScoreboardScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardScoreView.swift; sourceTree = "<group>"; };
 		396512DC233DCE00001CEFCB /* TeamExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamExt.swift; sourceTree = "<group>"; };
 		396512DF233DCE5B001CEFCB /* NHLTeamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLTeamID.swift; sourceTree = "<group>"; };
 		396512E1233F2F99001CEFCB /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				39C561512325B3D400D6B196 /* ScoreboardTeamView.swift */,
 				39C561532325B43100D6B196 /* ScoreboardPageViewController.swift */,
 				39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */,
+				3959561F23407F1400B73BB1 /* ScoreboardScoreView.swift */,
 			);
 			path = Scoreboard;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				391D086923348CD600DAF33F /* NSManagedObjectContextExt.swift in Sources */,
 				391D086723347ADA00DAF33F /* PersistenceManager.swift in Sources */,
 				39366A8123164B51001A2907 /* Request.swift in Sources */,
+				3959562023407F1400B73BB1 /* ScoreboardScoreView.swift in Sources */,
 				39C561542325B43100D6B196 /* ScoreboardPageViewController.swift in Sources */,
 				396512DD233DCE00001CEFCB /* TeamExt.swift in Sources */,
 				39C561522325B3D400D6B196 /* ScoreboardTeamView.swift in Sources */,

@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print ("There was an error")
             }
         }
-        clearAllCoreData()
+//        clearAllCoreData()
         
         return true
     }
