@@ -22,7 +22,7 @@ struct ScheduleRequest: Request {
     var url: URL {
         let dateString = dateFormatter.string(from: date)
         let dateQuery = "?startDate=\(dateString)&endDate=\(dateString)"
-        return URL(string: "https://statsapi.web.nhl.com/api/v1/schedule\(dateQuery)&expand=schedule.game.seriesSummary")!
+        return URL(string: "https://statsapi.web.nhl.com/api/v1/schedule\(dateQuery)&expand=schedule.game.seriesSummary,schedule.linescore")!
     }
 }
 
@@ -49,6 +49,7 @@ struct ScheduledGame: Codable {
     let gameType: String
     let status: GameStatusResponse
     let teams: ScheduledGameTeams
+    let linescore: LinescoreResponse
     
     var date: Date? {
         return DateFormatter.gameDateFormatter.date(from: gameDate)

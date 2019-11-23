@@ -38,7 +38,9 @@ class NetworkDispatch {
                         return
                     }
                     
-                    game.gameStatus = Int32(gameDetailsResponse.gameData.status.codedGameState) ?? 0
+                    let gameStatus = GameStatus(rawValue: Int(gameDetailsResponse.gameData.status.codedGameState) ?? 0)
+                    game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
+                    game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
                 }
             })
             .store(in: &cancellables)
@@ -65,6 +67,10 @@ class NetworkDispatch {
                                     }
                                     
                                     self.fetchGameDetails(gamePk: gameData.gamePk)
+                                    
+                                    let gameStatus = GameStatus(rawValue: Int(gameData.status.codedGameState) ?? 0)
+                                    game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
+                                    game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
                                     
                                     game.gameID = Int32(gameData.gamePk)
                                     game.gameTime = gameData.date
@@ -103,6 +109,7 @@ class NetworkDispatch {
                     teamsResponse.teams.forEach { teamResponse in
                         let teamPredicate = Team.fetchPredicate(teamID: teamResponse.id)
                         guard let team = try? objectContext.existingObjectOrNew(predicate: teamPredicate) as Team else {
+                            assertionFailure("Unable to find team with id: \(teamResponse.id)")
                             return
                         }
                         team.teamID = Int32(teamResponse.id)

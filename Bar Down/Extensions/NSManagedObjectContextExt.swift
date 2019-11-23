@@ -21,7 +21,7 @@ extension NSManagedObjectContext {
         fetchRequest.predicate = predicate
         let results = try fetch(fetchRequest)
         guard results.count <= 1 else {
-            assertionFailure()
+            assertionFailure("Multiple results for predicate expected to return a single result")
             throw FetchError.multipleObjects
         }
         if let firstFetchedObject = results.first, let fetchedObject = firstFetchedObject as? Object {

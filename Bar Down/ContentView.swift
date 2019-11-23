@@ -21,8 +21,9 @@ struct ContentView: View {
     
     init(date: Date) {
         self.date = date
-        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "gameTime", ascending: true),
-                                                      NSSortDescriptor(key: "sortStatus", ascending: true)],
+        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "sortStatus", ascending: true),
+                                                      NSSortDescriptor(key: "gameTime", ascending: true),
+                                                      NSSortDescriptor(key: "gameID", ascending: true)],
                                     predicate: Game.fetchPredicateFor(date: date))
     }
     
