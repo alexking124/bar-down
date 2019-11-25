@@ -45,6 +45,20 @@ struct LinescoreResponse: Codable {
     let hasShootout: Bool
     let powerPlayStrength: String
     let intermissionInfo: IntermissionInfoResponse
+    let teams: LinescoreTeamsResponse
+}
+
+struct LinescoreTeamsResponse: Codable {
+    let home: LinescoreTeamResponse
+    let away: LinescoreTeamResponse
+}
+
+struct LinescoreTeamResponse: Codable {
+    let goals: Int
+    let shotsOnGoal: Int
+    let goaliePulled: Bool
+    let numSkaters: Int
+    let powerPlay: Bool
 }
 
 struct IntermissionInfoResponse: Codable {

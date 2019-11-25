@@ -11,10 +11,15 @@ import SwiftUI
 
 struct ScoreboardScoreView: View {
     
+    let score: String
+    
+    init(score: String) {
+        self.score = score
+    }
     
     var body: some View {
         VStack {
-            Text("")
+            Text(score)
         }
     }
 }

@@ -72,6 +72,8 @@ class NetworkDispatch {
                                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
                                     game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
                                     
+                                    game.apply(linescoreResponse: gameData.linescore)
+                                    
                                     game.gameID = Int32(gameData.gamePk)
                                     game.gameTime = gameData.date
                                     if !currentGameDayGames.contains { $0.gameID == gameData.gamePk } {
@@ -123,4 +125,13 @@ class NetworkDispatch {
             .store(in: &cancellables)
     }
     
+}
+
+fileprivate extension Game {
+    
+    func apply(linescoreResponse: LinescoreResponse) {
+        homeTeamGoals = Int32(linescoreResponse.teams.home.goals)
+        awayTeamGoals = Int32(linescoreResponse.teams.away.goals)
+        clockString = linescoreResponse.currentPeriodTimeRemaining
+    }
 }
