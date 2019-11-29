@@ -86,7 +86,7 @@ class NetworkDispatch {
                                         return
                                     }
                                     
-                                    self.fetchGameDetails(gamePk: gameData.gamePk)
+//                                    self.fetchGameDetails(gamePk: gameData.gamePk)
                                     
                                     let gameStatus = GameStatus(rawValue: Int(gameData.status.codedGameState) ?? 0)
                                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)

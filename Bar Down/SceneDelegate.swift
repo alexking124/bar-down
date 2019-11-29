@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.backgroundColor = .white
+            window.backgroundColor = UIColor.systemBackground
 
             let navController = UINavigationController(rootViewController: ScoreboardPageViewController())
             navController.navigationBar.prefersLargeTitles = true

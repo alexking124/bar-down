@@ -30,3 +30,17 @@ extension Game: Identifiable {
         return Int(gameID)
     }
 }
+
+extension Game {
+    var status: GameStatus {
+        return GameStatus(rawValue: Int(gameStatus)) ?? .scheduled
+    }
+    
+//    public var scoreboardPrimaryText: String {
+//        switch status {
+//        case .scheduled, .pregame:
+//            return status.statusText
+//            case
+//        }
+//    }
+}
