@@ -39,7 +39,14 @@ struct ContentView: View {
                     default:
                         return "\(game.awayTeamGoals) - \(game.homeTeamGoals)"
                     }
-                }(), gameStatus: game.status.statusText)
+                }(), gameStatus: {
+                    switch game.status {
+                    case .live, .critical:
+                        return game.clockString ?? ""
+                    default:
+                        return game.status.statusText
+                    }
+                }())
                 Spacer()
                 ScoreboardTeamView(homeAwayStatus: .home, team: game.homeTeam!)
             }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))

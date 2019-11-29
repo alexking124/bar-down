@@ -13,7 +13,7 @@ enum GameStatus: Int {
     case pregame = 2
     case live = 3
     case critical = 4
-    case iDontEvenKnow = 5
+    case gameOver = 5
     case final = 6
     case reallyFinal = 7
     
@@ -23,9 +23,9 @@ enum GameStatus: Int {
         case .critical: return 0
         case .pregame: return 1
         case .scheduled: return 1
+        case .gameOver: return 0
         case .final: return 2
         case .reallyFinal: return 2
-        case .iDontEvenKnow: return 3
         }
     }
     
@@ -35,9 +35,9 @@ enum GameStatus: Int {
         case .critical: return "Live"
         case .pregame: return "Pregame"
         case .scheduled: return "Scheduled"
+        case .gameOver: return "Game Over"
         case .final: return "Final"
         case .reallyFinal: return "Final"
-        case .iDontEvenKnow: return "Unknown"
         }
     }
 }

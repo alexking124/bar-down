@@ -33,12 +33,12 @@ class NetworkDispatch {
     
     public func endUpdatingLiveScores() {
         updateDelayCancellable?.cancel()
+        cancellables.removeAll()
     }
     
     private func updateScoresAfterDelay() {
         updateDelayCancellable?.cancel()
         updateDelayCancellable = updateDelayProducer.sink(receiveValue: { [weak self] _ in
-            print("Update")
             guard let self = self else { return }
             self.fetchSchedule(date: Date())
             self.updateScoresAfterDelay()
@@ -66,7 +66,7 @@ class NetworkDispatch {
             .store(in: &cancellables)
     }
     
-    private func fetchSchedule(date: Date) {
+    public func fetchSchedule(date: Date) {
         NetworkManager.shared.publisher(for: ScheduleRequest(date: date))
             .receive(on: fetchQueue)
             .sink(receiveCompletion: { _ in }) { schedule in
