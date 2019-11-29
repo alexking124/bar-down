@@ -12,14 +12,17 @@ import SwiftUI
 struct ScoreboardScoreView: View {
     
     let score: String
+    let gameStatus: String
     
-    init(score: String) {
+    init(score: String, gameStatus: String) {
         self.score = score
+        self.gameStatus = gameStatus
     }
     
     var body: some View {
-        VStack {
-            Text(score)
+        VStack(alignment: .center, spacing: 2) {
+            Text(score).font(.system(size: 18, weight: .medium))
+            Text(gameStatus).font(.system(size: 14, weight: .light))
         }
     }
 }

@@ -28,4 +28,16 @@ enum GameStatus: Int {
         case .iDontEvenKnow: return 3
         }
     }
+    
+    var statusText: String {
+        switch self {
+        case .live: return "Live"
+        case .critical: return "Live"
+        case .pregame: return "Pregame"
+        case .scheduled: return "Scheduled"
+        case .final: return "Final"
+        case .reallyFinal: return "Final"
+        case .iDontEvenKnow: return "Unknown"
+        }
+    }
 }

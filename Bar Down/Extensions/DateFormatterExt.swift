@@ -22,6 +22,12 @@ extension DateFormatter {
         return formatter
     }()
     
+    static let scheduledGameTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter().withCurrentLocale()
+        formatter.dateFormat = BarDownDateFormat.gameClock.rawValue
+        return formatter
+    }()
+    
     convenience init(format: BarDownDateFormat) {
         self.init(dateFormat: format.rawValue)
     }

@@ -32,7 +32,14 @@ struct ContentView: View {
             HStack {
                 ScoreboardTeamView(homeAwayStatus: .away, team: game.awayTeam!).alignmentGuide(.leading, computeValue: { $0[.leading] })
                 Spacer()
-                ScoreboardScoreView(score: "\(game.awayTeamGoals) - \(game.homeTeamGoals)")
+                ScoreboardScoreView(score: {
+                    switch game.status {
+                    case .pregame, .scheduled:
+                        return game.gameTime.map { DateFormatter.scheduledGameTimeFormatter.string(from: $0) } ?? ""
+                    default:
+                        return "\(game.awayTeamGoals) - \(game.homeTeamGoals)"
+                    }
+                }(), gameStatus: game.status.statusText)
                 Spacer()
                 ScoreboardTeamView(homeAwayStatus: .home, team: game.homeTeam!)
             }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
