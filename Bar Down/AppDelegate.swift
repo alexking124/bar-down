@@ -39,6 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        NetworkDispatch.shared.beginUpdatingLiveScores()
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        NetworkDispatch.shared.endUpdatingLiveScores()
+    }
 
     // MARK: UISceneSession Lifecycle
 

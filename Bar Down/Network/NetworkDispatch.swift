@@ -18,11 +18,31 @@ class NetworkDispatch {
     @Published private var teamIDtoUpdate: Int = 0
     private var cancellables = Set<AnyCancellable>()
     
+    private var updateDelayCancellable: AnyCancellable?
+    private let updateDelayProducer: AnyPublisher<Void, Never> = {
+        return Just(()).delay(for: 5, tolerance: nil, scheduler: DispatchQueue.main, options: nil).eraseToAnyPublisher()
+    }()
+    
     private init() {
     }
-        
+
     public func beginUpdatingLiveScores() {
-        
+        fetchSchedule(date: Date())
+        updateScoresAfterDelay()
+    }
+    
+    public func endUpdatingLiveScores() {
+        updateDelayCancellable?.cancel()
+    }
+    
+    private func updateScoresAfterDelay() {
+        updateDelayCancellable?.cancel()
+        updateDelayCancellable = updateDelayProducer.sink(receiveValue: { [weak self] _ in
+            print("Update")
+            guard let self = self else { return }
+            self.fetchSchedule(date: Date())
+            self.updateScoresAfterDelay()
+        })
     }
     
     private func fetchGameDetails(gamePk: Int) {
@@ -46,7 +66,7 @@ class NetworkDispatch {
             .store(in: &cancellables)
     }
     
-    public func fetchSchedule(date: Date) {
+    private func fetchSchedule(date: Date) {
         NetworkManager.shared.publisher(for: ScheduleRequest(date: date))
             .receive(on: fetchQueue)
             .sink(receiveCompletion: { _ in }) { schedule in
