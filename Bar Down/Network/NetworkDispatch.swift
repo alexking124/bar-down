@@ -153,5 +153,8 @@ fileprivate extension Game {
         homeTeamGoals = Int32(linescoreResponse.teams.home.goals)
         awayTeamGoals = Int32(linescoreResponse.teams.away.goals)
         clockString = linescoreResponse.currentPeriodTimeRemaining
+        currentPeriod = Int32(linescoreResponse.currentPeriod ?? 1)
+        powerPlayStrength = linescoreResponse.powerPlayStrength
+        hasShootout = linescoreResponse.hasShootout
     }
 }

@@ -49,7 +49,7 @@ class ScoreboardViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        NetworkDispatch.shared.fetchSchedule(date: date)
+        NetworkDispatch.shared.fetchSchedule(date: date)
     }
     
 }

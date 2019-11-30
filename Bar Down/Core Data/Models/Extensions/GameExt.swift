@@ -36,11 +36,43 @@ extension Game {
         return GameStatus(rawValue: Int(gameStatus)) ?? .scheduled
     }
     
-//    public var scoreboardPrimaryText: String {
-//        switch status {
-//        case .scheduled, .pregame:
-//            return status.statusText
-//            case
-//        }
-//    }
+    var hasOvertime: Bool {
+        return currentPeriod > 3
+    }
+    
+    var periodString: String {
+        switch currentPeriod {
+        case 1: return "1st"
+        case 2: return "2nd"
+        case 3: return "3rd"
+        case 4: return "OT"
+        default: return "SO"
+        }
+    }
+    
+    public var scoreboardPrimaryText: String {
+        switch status {
+        case .pregame, .scheduled:
+            return gameTime.map { DateFormatter.scheduledGameTimeFormatter.string(from: $0) } ?? ""
+        default:
+            return "\(awayTeamGoals) - \(homeTeamGoals)"
+        }
+    }
+    
+    public var scoreboardSecondaryText: String {
+        switch status {
+        case .live, .critical:
+            return (clockString ?? "") + " " + periodString
+        case .final, .reallyFinal:
+            let statusText = status.statusText
+            if hasShootout {
+                return statusText + " SO"
+            } else if hasOvertime {
+                return statusText + " OT"
+            }
+            return statusText
+        default:
+            return status.statusText
+        }
+    }
 }
