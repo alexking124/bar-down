@@ -44,7 +44,6 @@
 		398D28292392138B00A2F734 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28282392138B00A2F734 /* SystemConfiguration.framework */; };
 		398D282B2392139B00A2F734 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D282A2392139B00A2F734 /* libc++.tbd */; };
 		398D282D239213A200A2F734 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D282C239213A200A2F734 /* libsqlite3.tbd */; };
-		398D282F239213C100A2F734 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D282E239213C100A2F734 /* StoreKit.framework */; };
 		3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B85823247BEF00145500 /* ScheduleRequest.swift */; };
 		39A1C5372318FB7900D0B897 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1C5362318FB7900D0B897 /* NetworkManager.swift */; };
 		39B75BF22300F8E500F82C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3512300B263009E3F23 /* Assets.xcassets */; };
@@ -98,7 +97,6 @@
 		398D28282392138B00A2F734 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		398D282A2392139B00A2F734 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		398D282C239213A200A2F734 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		398D282E239213C100A2F734 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3990B85823247BEF00145500 /* ScheduleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRequest.swift; sourceTree = "<group>"; };
 		39A1C5362318FB7900D0B897 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		39C5614B23258D9500D6B196 /* TeamsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequest.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				398D282F239213C100A2F734 /* StoreKit.framework in Frameworks */,
 				398D282D239213A200A2F734 /* libsqlite3.tbd in Frameworks */,
 				398D282B2392139B00A2F734 /* libc++.tbd in Frameworks */,
 				398D28292392138B00A2F734 /* SystemConfiguration.framework in Frameworks */,
@@ -267,7 +264,6 @@
 		398D28212392137400A2F734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				398D282E239213C100A2F734 /* StoreKit.framework */,
 				398D282C239213A200A2F734 /* libsqlite3.tbd */,
 				398D282A2392139B00A2F734 /* libc++.tbd */,
 				398D28282392138B00A2F734 /* SystemConfiguration.framework */,
@@ -576,7 +572,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
-				DEVELOPMENT_TEAM = DUYQ44RPLQ;
+				DEVELOPMENT_TEAM = T36GJ569RT;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,7 +599,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
-				DEVELOPMENT_TEAM = DUYQ44RPLQ;
+				DEVELOPMENT_TEAM = T36GJ569RT;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

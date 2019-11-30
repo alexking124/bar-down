@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 import CoreData
+import Combine
 
 extension Team {
+    
+    public override func willChangeValue(forKey key: String) {
+        super.willChangeValue(forKey: key)
+        self.objectWillChange.send()
+    }
     
     static func fetchRequestForTeam(id: Int) -> NSFetchRequest<Team> {
         let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
