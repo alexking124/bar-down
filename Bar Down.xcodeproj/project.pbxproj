@@ -25,6 +25,26 @@
 		396512E0233DCE5B001CEFCB /* NHLTeamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512DF233DCE5B001CEFCB /* NHLTeamID.swift */; };
 		396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E1233F2F99001CEFCB /* GameStatus.swift */; };
 		396512E4233F3482001CEFCB /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E3233F3482001CEFCB /* GameRequest.swift */; };
+		398D280423920F1A00A2F734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398D280323920F1A00A2F734 /* GoogleService-Info.plist */; };
+		398D28102392102200A2F734 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28062392102100A2F734 /* FirebaseCore.framework */; };
+		398D28112392102300A2F734 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */; };
+		398D28122392102300A2F734 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28082392102100A2F734 /* FirebaseAnalytics.framework */; };
+		398D28132392102300A2F734 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28092392102100A2F734 /* FirebaseInstanceID.framework */; };
+		398D28142392102300A2F734 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D280A2392102200A2F734 /* nanopb.framework */; };
+		398D28152392102300A2F734 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D280B2392102200A2F734 /* GoogleAppMeasurement.framework */; };
+		398D28162392102300A2F734 /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D280C2392102200A2F734 /* GoogleDataTransport.framework */; };
+		398D28172392102300A2F734 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D280D2392102200A2F734 /* GoogleUtilities.framework */; };
+		398D28182392102300A2F734 /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D280E2392102200A2F734 /* FIRAnalyticsConnector.framework */; };
+		398D28192392102300A2F734 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D280F2392102200A2F734 /* FirebaseCoreDiagnostics.framework */; };
+		398D281C2392110500A2F734 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D281A2392110500A2F734 /* Crashlytics.framework */; };
+		398D281D2392110500A2F734 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D281B2392110500A2F734 /* Fabric.framework */; };
+		398D28232392137400A2F734 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28222392137400A2F734 /* libicucore.tbd */; };
+		398D28252392137D00A2F734 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28242392137D00A2F734 /* CFNetwork.framework */; };
+		398D28272392138600A2F734 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28262392138500A2F734 /* Security.framework */; };
+		398D28292392138B00A2F734 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28282392138B00A2F734 /* SystemConfiguration.framework */; };
+		398D282B2392139B00A2F734 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D282A2392139B00A2F734 /* libc++.tbd */; };
+		398D282D239213A200A2F734 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D282C239213A200A2F734 /* libsqlite3.tbd */; };
+		398D282F239213C100A2F734 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D282E239213C100A2F734 /* StoreKit.framework */; };
 		3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B85823247BEF00145500 /* ScheduleRequest.swift */; };
 		39A1C5372318FB7900D0B897 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1C5362318FB7900D0B897 /* NetworkManager.swift */; };
 		39B75BF22300F8E500F82C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3512300B263009E3F23 /* Assets.xcassets */; };
@@ -57,6 +77,28 @@
 		396512DF233DCE5B001CEFCB /* NHLTeamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLTeamID.swift; sourceTree = "<group>"; };
 		396512E1233F2F99001CEFCB /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		396512E3233F3482001CEFCB /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
+		398D280323920F1A00A2F734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		398D28062392102100A2F734 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		398D28082392102100A2F734 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		398D28092392102100A2F734 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		398D280A2392102200A2F734 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
+		398D280B2392102200A2F734 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		398D280C2392102200A2F734 /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
+		398D280D2392102200A2F734 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		398D280E2392102200A2F734 /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		398D280F2392102200A2F734 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		398D281A2392110500A2F734 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		398D281B2392110500A2F734 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		398D281F2392124300A2F734 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		398D28202392124B00A2F734 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		398D28222392137400A2F734 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		398D28242392137D00A2F734 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		398D28262392138500A2F734 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		398D28282392138B00A2F734 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		398D282A2392139B00A2F734 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		398D282C239213A200A2F734 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		398D282E239213C100A2F734 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3990B85823247BEF00145500 /* ScheduleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRequest.swift; sourceTree = "<group>"; };
 		39A1C5362318FB7900D0B897 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		39C5614B23258D9500D6B196 /* TeamsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequest.swift; sourceTree = "<group>"; };
@@ -71,6 +113,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				398D282F239213C100A2F734 /* StoreKit.framework in Frameworks */,
+				398D282D239213A200A2F734 /* libsqlite3.tbd in Frameworks */,
+				398D282B2392139B00A2F734 /* libc++.tbd in Frameworks */,
+				398D28292392138B00A2F734 /* SystemConfiguration.framework in Frameworks */,
+				398D28272392138600A2F734 /* Security.framework in Frameworks */,
+				398D28252392137D00A2F734 /* CFNetwork.framework in Frameworks */,
+				398D28232392137400A2F734 /* libicucore.tbd in Frameworks */,
+				398D28112392102300A2F734 /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				398D28102392102200A2F734 /* FirebaseCore.framework in Frameworks */,
+				398D28152392102300A2F734 /* GoogleAppMeasurement.framework in Frameworks */,
+				398D28162392102300A2F734 /* GoogleDataTransport.framework in Frameworks */,
+				398D28182392102300A2F734 /* FIRAnalyticsConnector.framework in Frameworks */,
+				398D28142392102300A2F734 /* nanopb.framework in Frameworks */,
+				398D28122392102300A2F734 /* FirebaseAnalytics.framework in Frameworks */,
+				398D28192392102300A2F734 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				398D28172392102300A2F734 /* GoogleUtilities.framework in Frameworks */,
+				398D28132392102300A2F734 /* FirebaseInstanceID.framework in Frameworks */,
+				398D281C2392110500A2F734 /* Crashlytics.framework in Frameworks */,
+				398D281D2392110500A2F734 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +153,7 @@
 			children = (
 				3935A3472300B25F009E3F23 /* Bar Down */,
 				3935A3462300B25F009E3F23 /* Products */,
+				398D28212392137400A2F734 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +168,7 @@
 		3935A3472300B25F009E3F23 /* Bar Down */ = {
 			isa = PBXGroup;
 			children = (
+				398D280523920FF600A2F734 /* Firebase */,
 				396512DE233DCE3F001CEFCB /* Common */,
 				39877BD82333617D00F2CD5A /* Core Data */,
 				39C561572325BA4100D6B196 /* Extensions */,
@@ -118,6 +181,7 @@
 				3935A3512300B263009E3F23 /* Assets.xcassets */,
 				3935A3562300B263009E3F23 /* LaunchScreen.storyboard */,
 				3935A3592300B263009E3F23 /* Info.plist */,
+				398D280323920F1A00A2F734 /* GoogleService-Info.plist */,
 				3935A3532300B263009E3F23 /* Preview Content */,
 			);
 			path = "Bar Down";
@@ -179,6 +243,41 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		398D280523920FF600A2F734 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				398D28202392124B00A2F734 /* Firebase.h */,
+				398D281F2392124300A2F734 /* module.modulemap */,
+				398D281A2392110500A2F734 /* Crashlytics.framework */,
+				398D281B2392110500A2F734 /* Fabric.framework */,
+				398D280E2392102200A2F734 /* FIRAnalyticsConnector.framework */,
+				398D28082392102100A2F734 /* FirebaseAnalytics.framework */,
+				398D28062392102100A2F734 /* FirebaseCore.framework */,
+				398D280F2392102200A2F734 /* FirebaseCoreDiagnostics.framework */,
+				398D28092392102100A2F734 /* FirebaseInstanceID.framework */,
+				398D280B2392102200A2F734 /* GoogleAppMeasurement.framework */,
+				398D280C2392102200A2F734 /* GoogleDataTransport.framework */,
+				398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */,
+				398D280D2392102200A2F734 /* GoogleUtilities.framework */,
+				398D280A2392102200A2F734 /* nanopb.framework */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		398D28212392137400A2F734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				398D282E239213C100A2F734 /* StoreKit.framework */,
+				398D282C239213A200A2F734 /* libsqlite3.tbd */,
+				398D282A2392139B00A2F734 /* libc++.tbd */,
+				398D28282392138B00A2F734 /* SystemConfiguration.framework */,
+				398D28262392138500A2F734 /* Security.framework */,
+				398D28242392137D00A2F734 /* CFNetwork.framework */,
+				398D28222392137400A2F734 /* libicucore.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		39C5614D2325B3A100D6B196 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +332,7 @@
 				3935A3412300B25F009E3F23 /* Sources */,
 				3935A3422300B25F009E3F23 /* Frameworks */,
 				3935A3432300B25F009E3F23 /* Resources */,
+				398D281E2392116900A2F734 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -283,12 +383,34 @@
 			files = (
 				39B75BF22300F8E500F82C6D /* Assets.xcassets in Resources */,
 				3935A3582300B263009E3F23 /* LaunchScreen.storyboard in Resources */,
+				398D280423920F1A00A2F734 /* GoogleService-Info.plist in Resources */,
 				3935A3552300B263009E3F23 /* Preview Assets.xcassets in Resources */,
 				39381F922300EB5800622994 /* Logos.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		398D281E2392116900A2F734 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PROJECT_DIR}/Bar Down/Firebase/Fabric.framework/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3935A3412300B25F009E3F23 /* Sources */ = {
@@ -456,15 +578,22 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = DUYQ44RPLQ;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Bar\\ Down/Firebase",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 				INFOPLIST_FILE = "Bar Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aking.bar-down";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 			};
 			name = Debug;
 		};
@@ -476,15 +605,22 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = DUYQ44RPLQ;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Bar\\ Down/Firebase",
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 				INFOPLIST_FILE = "Bar Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aking.bar-down";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 			};
 			name = Release;
 		};

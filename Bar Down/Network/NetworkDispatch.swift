@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import Combine
+import Crashlytics
 
 class NetworkDispatch {
     
@@ -40,6 +41,7 @@ class NetworkDispatch {
         updateDelayCancellable?.cancel()
         updateDelayCancellable = updateDelayProducer.sink(receiveValue: { [weak self] _ in
             guard let self = self else { return }
+//            Crashlytics.sharedInstance().crash()
             self.fetchSchedule(date: Date())
             self.updateScoresAfterDelay()
         })

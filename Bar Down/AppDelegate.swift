@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Combine
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
 //        clearAllCoreData()
+        
+        FirebaseApp.configure()
         
         return true
     }
