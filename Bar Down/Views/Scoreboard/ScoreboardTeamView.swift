@@ -38,10 +38,17 @@ struct ScoreboardTeamView: View {
     
     var body: some View {
         VStack(alignment: stackAlignment, spacing: 0) {
-            Image(team.abbreviation?.lowercased() ?? "nhl")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 84, height: 70)
+            if homeAwayStatus == .away {
+            HStack {
+                Image(team.abbreviation?.lowercased() ?? "nhl").resizable().scaledToFit()
+                Spacer()
+            }.frame(width: 84, height: 70)
+            } else {
+                HStack {
+                    Spacer()
+                    Image(team.abbreviation?.lowercased() ?? "nhl").resizable().scaledToFit()
+                }.frame(width: 84, height: 70)
+            }
             Spacer(minLength: 8)
             Text(team.locationName ?? "")
                 .font(Font.system(size: 11, weight: .semibold, design: .default))

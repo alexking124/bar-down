@@ -52,6 +52,7 @@
 		39C561542325B43100D6B196 /* ScoreboardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561532325B43100D6B196 /* ScoreboardPageViewController.swift */; };
 		39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */; };
 		39C561592325BA4E00D6B196 /* DateFormatterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561582325BA4E00D6B196 /* DateFormatterExt.swift */; };
+		39C6BF6423E69366000D2292 /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C6BF6323E69366000D2292 /* GameDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		39C561532325B43100D6B196 /* ScoreboardPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardPageViewController.swift; sourceTree = "<group>"; };
 		39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 		39C561582325BA4E00D6B196 /* DateFormatterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExt.swift; sourceTree = "<group>"; };
+		39C6BF6323E69366000D2292 /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameDetailsView.swift; path = "Bar Down/Core Data/Models/Extensions/GameDetailsView.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +300,7 @@
 		39C5614F2325B3B900D6B196 /* Game Details */ = {
 			isa = PBXGroup;
 			children = (
+				39C6BF6323E69366000D2292 /* GameDetailsView.swift */,
 			);
 			path = "Game Details";
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				39C561542325B43100D6B196 /* ScoreboardPageViewController.swift in Sources */,
 				396512DD233DCE00001CEFCB /* TeamExt.swift in Sources */,
 				39C561522325B3D400D6B196 /* ScoreboardTeamView.swift in Sources */,
+				39C6BF6423E69366000D2292 /* GameDetailsView.swift in Sources */,
 				39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */,
 				3935A3502300B25F009E3F23 /* ContentView.swift in Sources */,
 				396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */,

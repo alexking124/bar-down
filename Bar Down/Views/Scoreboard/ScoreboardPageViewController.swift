@@ -26,6 +26,7 @@ class ScoreboardPageViewController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.largeTitleDisplayMode = .never
         if let currentScoreboardViewController = ScoreboardViewController() {
             setViewControllers([currentScoreboardViewController], direction: .forward, animated: false, completion: nil)
