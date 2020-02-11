@@ -20,6 +20,11 @@ struct GameDetailsView: View {
     }
     
     var body: some View {
-        Text("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack {
+                Text("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
+                Text("Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
+            }
+        }
     }
 }

@@ -18,9 +18,6 @@ struct NetworkManager {
     func publisher<R: Request>(for request: R) -> AnyPublisher<R.ResponseType, URLError> {
         let urlRequest = URLRequest(url: request.url)
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
-//            .handleEvents(receiveCancel: {
-//                print("Request cancelled: \(urlRequest.url)")
-//            })
             .compactMap { response -> R.ResponseType? in
                 do {
                     return try request.deserialize(response.data)

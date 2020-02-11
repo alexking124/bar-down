@@ -152,6 +152,8 @@ fileprivate extension Game {
     func apply(linescoreResponse: LinescoreResponse) {
         homeTeamGoals = Int32(linescoreResponse.teams.home.goals)
         awayTeamGoals = Int32(linescoreResponse.teams.away.goals)
+        homeTeamShots = Int32(linescoreResponse.teams.home.shotsOnGoal)
+        awayTeamShots = Int32(linescoreResponse.teams.away.shotsOnGoal)
         clockString = linescoreResponse.currentPeriodTimeRemaining
         currentPeriod = Int32(linescoreResponse.currentPeriod ?? 1)
         powerPlayStrength = linescoreResponse.powerPlayStrength
