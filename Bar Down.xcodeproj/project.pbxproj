@@ -53,6 +53,7 @@
 		39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */; };
 		39C561592325BA4E00D6B196 /* DateFormatterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C561582325BA4E00D6B196 /* DateFormatterExt.swift */; };
 		39C6BF6423E69366000D2292 /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C6BF6323E69366000D2292 /* GameDetailsView.swift */; };
+		39C6BF6623F28BC6000D2292 /* GamePeriodExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C6BF6523F28BC6000D2292 /* GamePeriodExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		39C561552325B4EF00D6B196 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 		39C561582325BA4E00D6B196 /* DateFormatterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExt.swift; sourceTree = "<group>"; };
 		39C6BF6323E69366000D2292 /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameDetailsView.swift; path = "Bar Down/Core Data/Models/Extensions/GameDetailsView.swift"; sourceTree = SOURCE_ROOT; };
+		39C6BF6523F28BC6000D2292 /* GamePeriodExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePeriodExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				391D086E2337EABD00DAF33F /* GameExt.swift */,
 				391D08702338230E00DAF33F /* GameDayExt.swift */,
 				396512DC233DCE00001CEFCB /* TeamExt.swift */,
+				39C6BF6523F28BC6000D2292 /* GamePeriodExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				39C6BF6423E69366000D2292 /* GameDetailsView.swift in Sources */,
 				39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */,
 				3935A3502300B25F009E3F23 /* ContentView.swift in Sources */,
+				39C6BF6623F28BC6000D2292 /* GamePeriodExt.swift in Sources */,
 				396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */,
 				3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */,
 				3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */,

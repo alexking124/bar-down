@@ -50,10 +50,10 @@ class NetworkDispatch {
             .receive(on: fetchQueue)
             .sink(receiveCompletion: { _ in }, receiveValue: { gameDetailsResponse in
 //                print(response.gameData.datetime)
-                PersistenceManager.shared.persistOnBackground { context in
+                PersistenceManager.shared.persistOnBackground { objectContext in
                     let gameFetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
                     gameFetchRequest.predicate = Game.gameFetchPredicate(gameID: gamePk)
-                    guard let game = try? context.fetch(gameFetchRequest).first else {
+                    guard let game = try? objectContext.fetch(gameFetchRequest).first else {
                         assertionFailure()
                         return
                     }
@@ -61,6 +61,22 @@ class NetworkDispatch {
                     let gameStatus = GameStatus(rawValue: Int(gameDetailsResponse.gameData.status.codedGameState) ?? 0)
                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
                     game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
+                    
+                    gameDetailsResponse.liveData.linescore.periods.forEach { periodData in
+                        let period: GamePeriod
+                        if let existingPeriod = (game.periods as? Set<GamePeriod>)?.first(where: { $0.periodNumber == periodData.num }) {
+                            period = existingPeriod
+                        } else {
+                            period = GamePeriod(context: objectContext)
+                            game.addToPeriods(period)
+                        }
+                        
+                        period.periodNumber = Int32(periodData.num)
+                        period.homeGoals = Int32(periodData.home.goals)
+                        period.awayGoals = Int32(periodData.away.goals)
+                        period.homeShots = Int32(periodData.home.shotsOnGoal)
+                        period.awayShots = Int32(periodData.away.shotsOnGoal)
+                    }
                 }
             })
             .store(in: &cancellables)
