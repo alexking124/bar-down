@@ -25,6 +25,8 @@ struct GameDetailsView: View {
                 Text("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
                 Text("Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
             }
+        }.onAppear {
+            NetworkDispatch.shared.fetchGameDetails(gamePk: Int(self.game.gameID))
         }
     }
 }

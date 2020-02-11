@@ -34,6 +34,7 @@ struct GameDataResponse: Codable {
 }
 
 struct LiveDataResponse: Codable {
+    let plays: PlaysResponse
     let linescore: LinescoreResponse
 }
 
@@ -78,4 +79,28 @@ struct LinescorePeriodResponse: Codable {
     let ordinalNum: String
     let home: TeamPeriodResult
     let away: TeamPeriodResult
+}
+
+struct PlaysResponse: Codable {
+    let allPlays: [GamePlayResponse]
+    let scoringPlays: [Int]
+    let penaltyPlays: [Int]
+}
+
+struct GamePlayResponse: Codable {
+    struct Result: Codable {
+        let eventTypeId: String
+        let description: String
+    }
+    struct About: Codable {
+        let period: Int
+        let periodTime: String
+    }
+    struct Player: Codable {
+        let playerType: String
+    }
+    
+    let players: [Player]?
+    let result: Result
+    let about: About
 }

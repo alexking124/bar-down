@@ -45,7 +45,7 @@ class NetworkDispatch {
         })
     }
     
-    private func fetchGameDetails(gamePk: Int) {
+    public func fetchGameDetails(gamePk: Int) {
         NetworkManager.shared.publisher(for: GameRequest(gameID: gamePk))
             .receive(on: fetchQueue)
             .sink(receiveCompletion: { _ in }, receiveValue: { gameDetailsResponse in
