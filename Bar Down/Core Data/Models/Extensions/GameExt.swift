@@ -75,4 +75,8 @@ extension Game {
             return status.statusText
         }
     }
+    
+    public var typedPeriods: Set<GamePeriod> {
+        return periods as? Set<GamePeriod> ?? []
+    }
 }

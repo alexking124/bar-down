@@ -19,6 +19,7 @@
         <attribute name="powerPlayStrength" optional="YES" attributeType="String"/>
         <attribute name="sortStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="awayTeam" maxCount="1" deletionRule="Nullify" destinationEntity="Team"/>
+        <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameEvent" inverseName="game" inverseEntity="GameEvent"/>
         <relationship name="gameDay" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameDay" inverseName="games" inverseEntity="GameDay"/>
         <relationship name="homeTeam" maxCount="1" deletionRule="Nullify" destinationEntity="Team"/>
         <relationship name="periods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GamePeriod" inverseName="game" inverseEntity="GamePeriod"/>
@@ -40,13 +41,14 @@
     <entity name="GameEvent" representedClassName="GameEvent" syncable="YES" codeGenerationType="class">
         <attribute name="eventDescription" optional="YES" attributeType="String"/>
         <attribute name="eventTypeId" optional="YES" attributeType="String"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="events" inverseEntity="Game"/>
     </entity>
     <entity name="GamePeriod" representedClassName="GamePeriod" syncable="YES" codeGenerationType="class">
         <attribute name="awayGoals" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="awayShots" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="homeGoals" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="homeShots" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="ordinalNumber" optional="YES" attributeType="String"/>
+        <attribute name="ordinalNumber" attributeType="String" defaultValueString=""/>
         <attribute name="periodNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="periods" inverseEntity="Game"/>
     </entity>
@@ -67,11 +69,11 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="358"/>
+        <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="373"/>
         <element name="GameDay" positionX="27" positionY="144" width="128" height="73"/>
         <element name="Season" positionX="242.0078125" positionY="-7.53125" width="128" height="73"/>
         <element name="Team" positionX="-23.80859375" positionY="-6.4296875" width="128" height="118"/>
         <element name="GamePeriod" positionX="-108" positionY="108" width="128" height="148"/>
-        <element name="GameEvent" positionX="-99" positionY="117" width="128" height="73"/>
+        <element name="GameEvent" positionX="-99" positionY="117" width="128" height="88"/>
     </elements>
 </model>

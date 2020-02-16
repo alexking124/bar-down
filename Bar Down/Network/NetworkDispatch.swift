@@ -71,6 +71,7 @@ class NetworkDispatch {
                             game.addToPeriods(period)
                         }
                         
+                        period.ordinalNumber = periodData.ordinalNum
                         period.periodNumber = Int32(periodData.num)
                         period.homeGoals = Int32(periodData.home.goals)
                         period.awayGoals = Int32(periodData.away.goals)
