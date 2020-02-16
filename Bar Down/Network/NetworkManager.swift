@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import Crashlytics
 
 struct NetworkManager {
     
@@ -22,6 +23,7 @@ struct NetworkManager {
                 do {
                     return try request.deserialize(response.data)
                 } catch {
+                    Crashlytics.sharedInstance().recordError(error)
                     print(error)
                     return nil
                 }

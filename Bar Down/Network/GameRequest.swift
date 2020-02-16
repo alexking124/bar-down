@@ -45,7 +45,7 @@ struct LinescoreResponse: Codable {
     let periods: [LinescorePeriodResponse]
     let hasShootout: Bool
     let powerPlayStrength: String
-    let intermissionInfo: IntermissionInfoResponse
+    let intermissionInfo: IntermissionInfoResponse?
     let teams: LinescoreTeamsResponse
 }
 

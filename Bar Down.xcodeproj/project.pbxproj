@@ -25,6 +25,7 @@
 		396512E0233DCE5B001CEFCB /* NHLTeamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512DF233DCE5B001CEFCB /* NHLTeamID.swift */; };
 		396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E1233F2F99001CEFCB /* GameStatus.swift */; };
 		396512E4233F3482001CEFCB /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E3233F3482001CEFCB /* GameRequest.swift */; };
+		396BCEA823F9E97700D8F74A /* ShotCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BCEA723F9E97700D8F74A /* ShotCounterView.swift */; };
 		398D280423920F1A00A2F734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398D280323920F1A00A2F734 /* GoogleService-Info.plist */; };
 		398D28102392102200A2F734 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28062392102100A2F734 /* FirebaseCore.framework */; };
 		398D28112392102300A2F734 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */; };
@@ -78,6 +79,7 @@
 		396512DF233DCE5B001CEFCB /* NHLTeamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHLTeamID.swift; sourceTree = "<group>"; };
 		396512E1233F2F99001CEFCB /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		396512E3233F3482001CEFCB /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
+		396BCEA723F9E97700D8F74A /* ShotCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShotCounterView.swift; path = "Bar Down/Core Data/Models/Extensions/ShotCounterView.swift"; sourceTree = SOURCE_ROOT; };
 		398D280323920F1A00A2F734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		398D28062392102100A2F734 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
 		398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				39C6BF6323E69366000D2292 /* GameDetailsView.swift */,
+				396BCEA723F9E97700D8F74A /* ShotCounterView.swift */,
 			);
 			path = "Game Details";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				3935A3502300B25F009E3F23 /* ContentView.swift in Sources */,
 				39C6BF6623F28BC6000D2292 /* GamePeriodExt.swift in Sources */,
 				396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */,
+				396BCEA823F9E97700D8F74A /* ShotCounterView.swift in Sources */,
 				3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */,
 				3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */,
 			);
@@ -579,6 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = T36GJ569RT;
 				ENABLE_PREVIEWS = YES;

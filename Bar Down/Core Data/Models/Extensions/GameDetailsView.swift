@@ -19,14 +19,27 @@ struct GameDetailsView: View {
         self.game = game
     }
     
+    var goalsByPeriod: [String] {
+        return game.typedPeriods.map { "\($0.ordinalNumber ?? ""): \($0.awayGoals) - \($0.homeGoals)" }
+    }
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack {
-                Text("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
                 Text("Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
+                ForEach(goalsByPeriod) {
+                    Text($0)
+                }
             }
         }.onAppear {
             NetworkDispatch.shared.fetchGameDetails(gamePk: Int(self.game.gameID))
         }
+        .navigationBarTitle("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
+    }
+}
+
+extension String: Identifiable {
+    public var id: Int {
+        return hashValue
     }
 }
