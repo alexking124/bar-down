@@ -81,4 +81,8 @@ extension Game {
             periodA.periodNumber < periodB.periodNumber
         }
     }
+    
+    public var typedEvents: [GameEvent] {
+        return events?.allObjects as? [GameEvent] ?? []
+    }
 }

@@ -94,6 +94,7 @@ struct GamePlayResponse: Codable {
             let name: String
         }
         let eventTypeId: String
+        let eventCode: String
         let description: String
         let strength: Strength?
     }

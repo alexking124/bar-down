@@ -61,9 +61,21 @@ class NetworkDispatch {
                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
                     game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
                     
-//                    gameDetailsResponse.liveData.plays.scoringPlays.forEach { scorePlayIndex in
-//                        print(gameDetailsResponse.liveData.plays.allPlays[scorePlayIndex])
-//                    }
+                    let playsResponse = gameDetailsResponse.liveData.plays
+                    let eventIndices = playsResponse.scoringPlays + playsResponse.penaltyPlays
+                    eventIndices.forEach { eventIndex in
+                        let eventDetails = playsResponse.allPlays[eventIndex]
+                        let eventID = "\(game.gameID).\(eventDetails.result.eventCode)"
+                        
+                        let eventPredicate = GameEvent.gameEventFetchPredicate(gameEventID: eventID)
+                        guard let event: GameEvent = try? objectContext.existingObjectOrNew(predicate: eventPredicate) else {
+                            assertionFailure("Unable to get unique GameEvent with eventIdentifier: \(eventID)")
+                            return
+                        }
+                        event.eventIdentifier = eventID
+                        event.game = game
+                        event.apply(response: eventDetails)
+                    }
                     
                     gameDetailsResponse.liveData.linescore.periods.forEach { periodData in
                         let period: GamePeriod

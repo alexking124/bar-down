@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="class">
         <attribute name="awayTeamGoals" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="awayTeamShots" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -42,7 +42,16 @@
         <attribute name="eventDescription" optional="YES" attributeType="String"/>
         <attribute name="eventIdentifier" optional="YES" attributeType="String"/>
         <attribute name="eventTypeId" optional="YES" attributeType="String"/>
+        <attribute name="periodNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="periodTime" optional="YES" attributeType="String"/>
+        <attribute name="strengthCode" optional="YES" attributeType="String"/>
+        <attribute name="teamID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="events" inverseEntity="Game"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="eventIdentifier"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="GamePeriod" representedClassName="GamePeriod" syncable="YES" codeGenerationType="class">
         <attribute name="awayGoals" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -72,7 +81,7 @@
     <elements>
         <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="373"/>
         <element name="GameDay" positionX="27" positionY="144" width="128" height="73"/>
-        <element name="GameEvent" positionX="-99" positionY="117" width="128" height="103"/>
+        <element name="GameEvent" positionX="-99" positionY="117" width="128" height="163"/>
         <element name="GamePeriod" positionX="-108" positionY="108" width="128" height="148"/>
         <element name="Season" positionX="242.0078125" positionY="-7.53125" width="128" height="73"/>
         <element name="Team" positionX="-23.80859375" positionY="-6.4296875" width="128" height="118"/>

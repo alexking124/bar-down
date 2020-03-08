@@ -21,30 +21,16 @@ struct GameDetailsView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .center) {
+            VStack(alignment: .center, spacing: 0) {
                 GameDetailsSectionHeader(title: "Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
                 ShotCounterView(game: game)
+                GameDetailsSectionHeader(title: "Goals: \(game.awayTeamGoals) - \(game.homeTeamGoals)")
+                GoalListView(game: game).background(Color.green)
             }
             .frame(width: UIScreen.main.bounds.width, alignment: .topLeading)
         }.onAppear {
             NetworkDispatch.shared.fetchGameDetails(gamePk: Int(self.game.gameID))
         }
         .navigationBarTitle("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
-    }
-}
-
-extension View {
-    func fillParent(alignment: Alignment = .center) -> some View {
-        return GeometryReader { geometry in
-            self.frame(width: geometry.size.width,
-                       height: geometry.size.height,
-                       alignment: alignment)
-        }
-    }
-}
-
-extension String: Identifiable {
-    public var id: Int {
-        return hashValue
     }
 }
