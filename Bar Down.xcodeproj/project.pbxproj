@@ -26,6 +26,8 @@
 		396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E1233F2F99001CEFCB /* GameStatus.swift */; };
 		396512E4233F3482001CEFCB /* GameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396512E3233F3482001CEFCB /* GameRequest.swift */; };
 		396BCEA823F9E97700D8F74A /* ShotCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BCEA723F9E97700D8F74A /* ShotCounterView.swift */; };
+		396BCEAA240233EF00D8F74A /* GameDetailsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */; };
+		396BCEAC2402379000D8F74A /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BCEAB2402379000D8F74A /* CollectionExt.swift */; };
 		398D280423920F1A00A2F734 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 398D280323920F1A00A2F734 /* GoogleService-Info.plist */; };
 		398D28102392102200A2F734 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28062392102100A2F734 /* FirebaseCore.framework */; };
 		398D28112392102300A2F734 /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */; };
@@ -80,6 +82,8 @@
 		396512E1233F2F99001CEFCB /* GameStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatus.swift; sourceTree = "<group>"; };
 		396512E3233F3482001CEFCB /* GameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRequest.swift; sourceTree = "<group>"; };
 		396BCEA723F9E97700D8F74A /* ShotCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShotCounterView.swift; path = "Bar Down/Core Data/Models/Extensions/ShotCounterView.swift"; sourceTree = SOURCE_ROOT; };
+		396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameDetailsSectionHeader.swift; path = "Bar Down/Core Data/Models/Extensions/GameDetailsSectionHeader.swift"; sourceTree = SOURCE_ROOT; };
+		396BCEAB2402379000D8F74A /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		398D280323920F1A00A2F734 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		398D28062392102100A2F734 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
 		398D28072392102100A2F734 /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 			children = (
 				39C6BF6323E69366000D2292 /* GameDetailsView.swift */,
 				396BCEA723F9E97700D8F74A /* ShotCounterView.swift */,
+				396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */,
 			);
 			path = "Game Details";
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 			children = (
 				39C561582325BA4E00D6B196 /* DateFormatterExt.swift */,
 				391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */,
+				396BCEAB2402379000D8F74A /* CollectionExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,11 +448,13 @@
 				39C6BF6423E69366000D2292 /* GameDetailsView.swift in Sources */,
 				39C561562325B4EF00D6B196 /* ScoreboardViewController.swift in Sources */,
 				3935A3502300B25F009E3F23 /* ContentView.swift in Sources */,
+				396BCEAC2402379000D8F74A /* CollectionExt.swift in Sources */,
 				39C6BF6623F28BC6000D2292 /* GamePeriodExt.swift in Sources */,
 				396512E2233F2F99001CEFCB /* GameStatus.swift in Sources */,
 				396BCEA823F9E97700D8F74A /* ShotCounterView.swift in Sources */,
 				3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */,
 				3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */,
+				396BCEAA240233EF00D8F74A /* GameDetailsSectionHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

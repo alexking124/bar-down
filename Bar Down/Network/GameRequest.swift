@@ -89,18 +89,35 @@ struct PlaysResponse: Codable {
 
 struct GamePlayResponse: Codable {
     struct Result: Codable {
+        struct Strength: Codable {
+            let code: String
+            let name: String
+        }
         let eventTypeId: String
         let description: String
+        let strength: Strength?
     }
     struct About: Codable {
         let period: Int
         let periodTime: String
     }
     struct Player: Codable {
+        struct Details: Codable {
+            let id: Int
+            let fullName: String
+        }
         let playerType: String
+        let seasonTotal: Int?
+        let player: Details
+    }
+    struct Team: Codable {
+        let id: Int
+        let name: String
+        let triCode: String
     }
     
     let players: [Player]?
     let result: Result
     let about: About
+    let team: Team?
 }

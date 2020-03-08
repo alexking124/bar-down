@@ -19,22 +19,27 @@ struct GameDetailsView: View {
         self.game = game
     }
     
-    var goalsByPeriod: [String] {
-        return game.typedPeriods.map { "\($0.ordinalNumber ?? ""): \($0.awayGoals) - \($0.homeGoals)" }
-    }
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
-            VStack {
-                Text("Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
-                ForEach(goalsByPeriod) {
-                    Text($0)
-                }
+            VStack(alignment: .center) {
+                GameDetailsSectionHeader(title: "Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
+                ShotCounterView(game: game)
             }
+            .frame(width: UIScreen.main.bounds.width, alignment: .topLeading)
         }.onAppear {
             NetworkDispatch.shared.fetchGameDetails(gamePk: Int(self.game.gameID))
         }
         .navigationBarTitle("\(game.awayTeam?.abbreviation ?? "") @ \(game.homeTeam?.abbreviation ?? "")")
+    }
+}
+
+extension View {
+    func fillParent(alignment: Alignment = .center) -> some View {
+        return GeometryReader { geometry in
+            self.frame(width: geometry.size.width,
+                       height: geometry.size.height,
+                       alignment: alignment)
+        }
     }
 }
 

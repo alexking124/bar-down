@@ -49,7 +49,6 @@ class NetworkDispatch {
         NetworkManager.shared.publisher(for: GameRequest(gameID: gamePk))
             .receive(on: fetchQueue)
             .sink(receiveCompletion: { _ in }, receiveValue: { gameDetailsResponse in
-//                print(response.gameData.datetime)
                 PersistenceManager.shared.persistOnBackground { objectContext in
                     let gameFetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
                     gameFetchRequest.predicate = Game.gameFetchPredicate(gameID: gamePk)
@@ -62,9 +61,13 @@ class NetworkDispatch {
                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
                     game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
                     
+//                    gameDetailsResponse.liveData.plays.scoringPlays.forEach { scorePlayIndex in
+//                        print(gameDetailsResponse.liveData.plays.allPlays[scorePlayIndex])
+//                    }
+                    
                     gameDetailsResponse.liveData.linescore.periods.forEach { periodData in
                         let period: GamePeriod
-                        if let existingPeriod = (game.periods as? Set<GamePeriod>)?.first(where: { $0.periodNumber == periodData.num }) {
+                        if let existingPeriod = game.typedPeriods.first(where: { $0.periodNumber == periodData.num }) {
                             period = existingPeriod
                         } else {
                             period = GamePeriod(context: objectContext)
@@ -102,8 +105,6 @@ class NetworkDispatch {
                                     guard let game = try? objectContext.existingObjectOrNew(predicate: Game.gameFetchPredicate(gameID: gameData.gamePk)) as Game else {
                                         return
                                     }
-                                    
-//                                    self.fetchGameDetails(gamePk: gameData.gamePk)
                                     
                                     let gameStatus = GameStatus(rawValue: Int(gameData.status.codedGameState) ?? 0)
                                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)

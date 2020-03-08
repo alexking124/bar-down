@@ -11,17 +11,34 @@ import SwiftUI
 
 struct ShotCounterView: View {
     
+    @ObservedObject var game: Game
+    
+    init(game: Game) {
+        self.game = game
+    }
+    
     var body: some View {
-        VStack {
-            ShotCounterRow()
-            ShotCounterRow()
+        HStack {
+//            Spacer()
+            VStack(alignment: .leading) {
+                Text("Shots").font(Font.system(size: 24))
+                ForEach(0..<max(3, game.typedPeriods.count), id: \.self) { periodNumber in
+                    return Text("\(self.game.typedPeriods[safe: periodNumber]?.ordinalNumber ?? "-")")
+                }
+                if game.hasShootout {
+                    Text("SO")
+                }
+            }.padding()
+            Spacer()
         }
     }
+    
+//    func periodText
     
 }
 
 private struct ShotCounterRow: View {
     var body: some View {
-        Text("")
+        Text("Shots")
     }
 }

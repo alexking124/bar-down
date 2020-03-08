@@ -13,3 +13,9 @@ extension GamePeriod {
     
     
 }
+
+extension GamePeriod: Identifiable {
+    public var id: Int {
+        return Int(periodNumber)
+    }
+}

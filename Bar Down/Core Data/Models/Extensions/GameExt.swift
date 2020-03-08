@@ -76,7 +76,9 @@ extension Game {
         }
     }
     
-    public var typedPeriods: Set<GamePeriod> {
-        return periods as? Set<GamePeriod> ?? []
+    public var typedPeriods: [GamePeriod] {
+        return (periods?.allObjects as? [GamePeriod] ?? []).sorted { (periodA, periodB) -> Bool in
+            periodA.periodNumber < periodB.periodNumber
+        }
     }
 }
