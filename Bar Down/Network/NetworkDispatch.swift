@@ -126,7 +126,7 @@ class NetworkDispatch {
                                     
                                     game.gameID = Int32(gameData.gamePk)
                                     game.gameTime = gameData.date
-                                    if !currentGameDayGames.contains { $0.gameID == gameData.gamePk } {
+                                  if !currentGameDayGames.contains(where: { $0.gameID == gameData.gamePk }) {
                                         gameDay.addToGames(game)
                                     }
                                     let homeTeamID = gameData.teams.home.team.id
