@@ -21,6 +21,7 @@ extension GameEvent {
         strengthCode = response.result.strength?.code
         periodTime = response.about.periodTime
         periodNumber = Int32(response.about.period)
+        eventIndex = Int32(response.about.eventIdx)
     }
 
 }

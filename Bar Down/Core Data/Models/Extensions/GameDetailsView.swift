@@ -25,7 +25,7 @@ struct GameDetailsView: View {
                 GameDetailsSectionHeader(title: "Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
                 ShotCounterView(game: game)
                 GameDetailsSectionHeader(title: "Goals: \(game.awayTeamGoals) - \(game.homeTeamGoals)")
-                GoalListView(game: game).background(Color.green)
+                GoalListView(game: game) // .background(Color.green)
             }
             .frame(width: UIScreen.main.bounds.width, alignment: .topLeading)
         }.onAppear {

@@ -8,6 +8,7 @@
         <attribute name="gameID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gameStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="gameTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gameType" optional="YES" attributeType="String"/>
         <attribute name="hasPowerPlay" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="hasShootout" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="homeTeamGoals" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -41,6 +42,7 @@
     <entity name="GameEvent" representedClassName="GameEvent" syncable="YES" codeGenerationType="class">
         <attribute name="eventDescription" optional="YES" attributeType="String"/>
         <attribute name="eventIdentifier" optional="YES" attributeType="String"/>
+        <attribute name="eventIndex" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="eventTypeId" optional="YES" attributeType="String"/>
         <attribute name="periodNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="periodTime" optional="YES" attributeType="String"/>
@@ -79,9 +81,9 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="373"/>
+        <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="388"/>
         <element name="GameDay" positionX="27" positionY="144" width="128" height="73"/>
-        <element name="GameEvent" positionX="-99" positionY="117" width="128" height="163"/>
+        <element name="GameEvent" positionX="-99" positionY="117" width="128" height="178"/>
         <element name="GamePeriod" positionX="-108" positionY="108" width="128" height="148"/>
         <element name="Season" positionX="242.0078125" positionY="-7.53125" width="128" height="73"/>
         <element name="Team" positionX="-23.80859375" positionY="-6.4296875" width="128" height="118"/>

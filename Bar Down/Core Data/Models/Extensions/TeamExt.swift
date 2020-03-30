@@ -33,7 +33,7 @@ extension Team {
     }
     
     var logo: UIImage? {
-        return NHLTeamID.logo(for: nhlTeamID)
+        return nhlTeamID.logo
     }
     
 }

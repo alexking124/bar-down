@@ -50,10 +50,15 @@ enum NHLTeamID: Int, CaseIterable, Identifiable {
     var id: Int {
         return rawValue
     }
-}
-
-extension NHLTeamID {
-    static func logo(for teamID: NHLTeamID) -> UIImage? {
-        return UIImage(named: "\(teamID)")
+    
+    var logo: UIImage? {
+        return UIImage(named: imageName)
+    }
+    
+    var imageName: String {
+        switch self {
+        default:
+            return "\(self)"
+        }
     }
 }

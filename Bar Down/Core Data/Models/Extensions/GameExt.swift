@@ -83,6 +83,6 @@ extension Game {
     }
     
     public var typedEvents: [GameEvent] {
-        return events?.allObjects as? [GameEvent] ?? []
+        return (events?.allObjects as? [GameEvent] ?? []).sorted { $0.eventIndex < $1.eventIndex }
     }
 }

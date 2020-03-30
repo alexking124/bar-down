@@ -101,6 +101,7 @@ struct GamePlayResponse: Codable {
     struct About: Codable {
         let period: Int
         let periodTime: String
+        let eventIdx: Int
     }
     struct Player: Codable {
         struct Details: Codable {
