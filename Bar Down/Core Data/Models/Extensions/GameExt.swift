@@ -52,6 +52,8 @@ extension Game {
     
     public var scoreboardPrimaryText: String {
         switch status {
+        case .scheduledTBD:
+          return "TBD"
         case .pregame, .scheduled, .postponed:
             return gameTime.map { DateFormatter.scheduledGameTimeFormatter.string(from: $0) } ?? ""
         default:

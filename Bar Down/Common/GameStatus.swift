@@ -16,6 +16,7 @@ enum GameStatus: Int {
     case gameOver = 5
     case final = 6
     case reallyFinal = 7
+    case scheduledTBD = 8
     case postponed = 9
     
     var sortStatus: Int {
@@ -27,6 +28,7 @@ enum GameStatus: Int {
         case .gameOver: return 2
         case .final: return 2
         case .reallyFinal: return 2
+        case .scheduledTBD: return 2
         case .postponed: return 2
         }
     }
@@ -40,6 +42,7 @@ enum GameStatus: Int {
         case .gameOver: return "Final"
         case .final: return "Final"
         case .reallyFinal: return "Final"
+        case .scheduledTBD: return "Scheduled"
         case .postponed: return "Postponed"
         }
     }
