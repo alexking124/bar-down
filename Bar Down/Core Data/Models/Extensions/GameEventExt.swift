@@ -26,7 +26,7 @@ extension GameEvent {
 
 }
 
-extension GameEvent: Identifiable {
+extension GameEvent {
     public var id: String {
         return eventIdentifier ?? ""
     }

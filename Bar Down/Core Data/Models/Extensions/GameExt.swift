@@ -25,7 +25,7 @@ extension Game {
     }
 }
 
-extension Game: Identifiable {
+extension Game {
     public var id: Int {
         return Int(gameID)
     }

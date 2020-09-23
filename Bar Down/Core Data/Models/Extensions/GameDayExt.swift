@@ -20,7 +20,7 @@ extension GameDay {
     
 }
 
-extension GameDay: Identifiable {
+extension GameDay {
     public var id: String {
         return gameDate ?? ""
     }
