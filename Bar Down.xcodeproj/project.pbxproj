@@ -69,12 +69,6 @@
 		396BCEA723F9E97700D8F74A /* ShotCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShotCounterView.swift; path = "Bar Down/Core Data/Models/Extensions/ShotCounterView.swift"; sourceTree = SOURCE_ROOT; };
 		396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameDetailsSectionHeader.swift; path = "Bar Down/Core Data/Models/Extensions/GameDetailsSectionHeader.swift"; sourceTree = SOURCE_ROOT; };
 		396BCEAB2402379000D8F74A /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
-		398D28222392137400A2F734 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		398D28242392137D00A2F734 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		398D28262392138500A2F734 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		398D28282392138B00A2F734 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		398D282A2392139B00A2F734 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		398D282C239213A200A2F734 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		3990B85823247BEF00145500 /* ScheduleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRequest.swift; sourceTree = "<group>"; };
 		39A1C5362318FB7900D0B897 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		39C5614B23258D9500D6B196 /* TeamsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequest.swift; sourceTree = "<group>"; };
@@ -205,12 +199,6 @@
 		398D28212392137400A2F734 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				398D282C239213A200A2F734 /* libsqlite3.tbd */,
-				398D282A2392139B00A2F734 /* libc++.tbd */,
-				398D28282392138B00A2F734 /* SystemConfiguration.framework */,
-				398D28262392138500A2F734 /* Security.framework */,
-				398D28242392137D00A2F734 /* CFNetwork.framework */,
-				398D28222392137400A2F734 /* libicucore.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
