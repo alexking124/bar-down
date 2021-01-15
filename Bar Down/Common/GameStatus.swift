@@ -29,7 +29,7 @@ enum GameStatus: Int {
         case .final: return 2
         case .reallyFinal: return 2
         case .scheduledTBD: return 2
-        case .postponed: return 2
+        case .postponed: return 3
         }
     }
     

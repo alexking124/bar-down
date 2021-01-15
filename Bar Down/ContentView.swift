@@ -22,6 +22,7 @@ struct ContentView: View {
     init(date: Date) {
         self.date = date
         fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "sortStatus", ascending: true),
+                                                      NSSortDescriptor(key: "gameTime", ascending: true),
                                                       NSSortDescriptor(key: "gameID", ascending: true)],
                                     predicate: Game.fetchPredicateFor(date: date))
     }
@@ -38,7 +39,7 @@ struct ContentView: View {
                 }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
                 NavigationLink(destination: GameDetailsView(game: game)) {
                     EmptyView()
-                }.buttonStyle(PlainButtonStyle())
+                }.hidden().buttonStyle(PlainButtonStyle())
             }
         }
     }
