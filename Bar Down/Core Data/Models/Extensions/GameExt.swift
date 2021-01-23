@@ -39,6 +39,10 @@ extension Game {
     var hasOvertime: Bool {
         return currentPeriod > 3
     }
+
+  var intermissionClockText: String {
+    DateFormatter.intermissionClockTime.string(from: Date(timeIntervalSinceReferenceDate: TimeInterval(intermissionTimeRemaining)))
+  }
     
     var periodString: String {
         switch currentPeriod {
@@ -46,7 +50,8 @@ extension Game {
         case 2: return "2nd"
         case 3: return "3rd"
         case 4: return "OT"
-        default: return "SO"
+        case 5: return hasShootout ? "SO" : "2OT"
+        default: return "\(currentPeriod - 3)OT"
         }
     }
     
@@ -64,7 +69,10 @@ extension Game {
     public var scoreboardSecondaryText: String {
         switch status {
         case .live, .critical:
-            return (clockString ?? "") + " " + periodString
+          if isIntermission {
+            return "\(intermissionClockText) \(periodString) INT"
+          }
+          return (clockString ?? "") + " " + periodString
         case .final, .reallyFinal:
             let statusText = status.statusText
             if hasShootout {

@@ -188,5 +188,8 @@ fileprivate extension Game {
         currentPeriod = Int32(linescoreResponse.currentPeriod ?? 1)
         powerPlayStrength = linescoreResponse.powerPlayStrength
         hasShootout = linescoreResponse.hasShootout
+      isIntermission = linescoreResponse.intermissionInfo?.inIntermission ?? false
+      intermissionTimeRemaining = Int32(linescoreResponse.intermissionInfo?.intermissionTimeRemaining ?? 0)
+      intermissionTimeElapsed = Int32(linescoreResponse.intermissionInfo?.intermissionTimeElapsed ?? 0)
     }
 }
