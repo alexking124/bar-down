@@ -30,16 +30,10 @@ struct ContentView: View {
     var body: some View {
         return List(fetchedResults) { game in
             ZStack {
-                HStack {
-                    ScoreboardTeamView(homeAwayStatus: .away, team: game.awayTeam!).alignmentGuide(.leading, computeValue: { $0[.leading] })
-                    Spacer()
-                    ScoreboardScoreView(score: game.scoreboardPrimaryText, gameStatus: game.scoreboardSecondaryText)
-                    Spacer()
-                    ScoreboardTeamView(homeAwayStatus: .home, team: game.homeTeam!)
-                }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
-                NavigationLink(destination: GameDetailsView(game: game)) {
-                    EmptyView()
-                }.hidden().buttonStyle(PlainButtonStyle())
+              ScoreboardGameSummaryView(game: game)
+              NavigationLink(destination: GameDetailsView(game: game)) {
+                EmptyView()
+              }.hidden().buttonStyle(PlainButtonStyle())
             }
         }
     }

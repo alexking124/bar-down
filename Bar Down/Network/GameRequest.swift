@@ -97,6 +97,9 @@ struct GamePlayResponse: Codable {
         let eventCode: String
         let description: String
         let strength: Strength?
+      let secondaryType: String?
+      let emptyNet: Bool?
+      let gameWinningGoal: Bool?
     }
     struct About: Codable {
         let period: Int
