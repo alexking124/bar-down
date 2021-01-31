@@ -10,6 +10,10 @@ import Foundation
 
 extension GameEvent {
 
+  static func predicate(gameID: Int32, eventType: GameEventType) -> NSPredicate {
+    return NSPredicate(format: "(%K BEGINSWITH %@) AND (%K = %@)", "eventIdentifier", "\(gameID)", "eventTypeId", eventType.rawValue)
+  }
+
     static func gameEventFetchPredicate(gameEventID: String) -> NSPredicate {
         return NSPredicate(format: "%K = %@", "eventIdentifier", "\(gameEventID)")
     }

@@ -18,17 +18,7 @@ struct ScoreboardTeamView: View {
     
     let homeAwayStatus: HomeAwayStatus
     @ObservedObject var team: Team
-//    private var fetchRequest: FetchRequest<Team>
-//    private var team: FetchedResults<Team> {
-//        fetchRequest.wrappedValue
-//    }
-    
-//    init(homeAwayStatus: HomeAwayStatus, teamID: Int) {
-//        self.homeAwayStatus = homeAwayStatus
-//        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "teamID", ascending: true)],
-//                                    predicate: Team.fetchPredicate(teamID: teamID))
-//    }
-    
+
     var stackAlignment: HorizontalAlignment {
         switch homeAwayStatus {
         case .home: return .trailing

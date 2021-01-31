@@ -25,6 +25,6 @@ struct GameDetailsSectionHeader: View {
                 Spacer()
             }
             Divider()
-        }.padding()
+        }.padding([.top, .leading, .trailing])
     }
 }

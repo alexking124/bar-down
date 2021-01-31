@@ -12,7 +12,7 @@ import CoreData
 import Combine
 
 struct GameDetailsView: View {
-    
+
     @ObservedObject var game: Game
     
     init(game: Game) {
@@ -25,7 +25,9 @@ struct GameDetailsView: View {
                 GameDetailsSectionHeader(title: "Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
                 ShotCounterView(game: game)
                 GameDetailsSectionHeader(title: "Goals: \(game.awayTeamGoals) - \(game.homeTeamGoals)")
-                GoalListView(game: game) // .background(Color.green)
+              GoalListView(gameID: game.gameID)
+              GameDetailsSectionHeader(title: "Penalties")
+              PenaltyListView(gameID: game.gameID)
             }
             .frame(width: UIScreen.main.bounds.width, alignment: .topLeading)
         }.onAppear {

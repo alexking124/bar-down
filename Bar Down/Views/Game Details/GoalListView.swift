@@ -10,24 +10,24 @@ import Foundation
 import SwiftUI
 
 struct GoalListView: View {
-    
-    @ObservedObject var game: Game
-    
-    init(game: Game) {
-        self.game = game
-    }
-    
-    private var goalEvents: [GameEvent] { game.typedEvents.filter({ $0.eventTypeId == "GOAL" }) }
-    private var goalDescriptions: [(String, Int32)] { goalEvents.map({ ($0.eventDescription ?? "", $0.teamID) }) }
+
+  private var fetchRequest: FetchRequest<GameEvent>
+  private var fetchedResults: FetchedResults<GameEvent> {
+      fetchRequest.wrappedValue
+  }
+
+  init(gameID: Int32) {
+    fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "eventIdentifier", ascending: true)],
+                                predicate: GameEvent.predicate(gameID: gameID, eventType: .goal))
+  }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            ForEach(goalDescriptions, id: \.0.self) { description in
-                GoalScoredView(description: description.0, teamID: description.1)
+            ForEach(fetchedResults) { goalEvent in
+              GoalScoredView(description: goalEvent.eventDescription ?? "", teamID: goalEvent.teamID)
             }
         }.padding()
     }
-
 }
 
 fileprivate struct GoalScoredView: View {

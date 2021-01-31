@@ -31,6 +31,8 @@
 		396BCEAA240233EF00D8F74A /* GameDetailsSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */; };
 		396BCEAC2402379000D8F74A /* CollectionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BCEAB2402379000D8F74A /* CollectionExt.swift */; };
 		39823D0025C25A1F00A2B2A7 /* ScoreboardGameSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39823CFF25C25A1F00A2B2A7 /* ScoreboardGameSummaryView.swift */; };
+		39823D0425C3EFC200A2B2A7 /* PenaltyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39823D0325C3EFC200A2B2A7 /* PenaltyListView.swift */; };
+		39823D0725C3F1FC00A2B2A7 /* GameEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39823D0625C3F1FC00A2B2A7 /* GameEventType.swift */; };
 		3990B85923247BEF00145500 /* ScheduleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3990B85823247BEF00145500 /* ScheduleRequest.swift */; };
 		39A1C5372318FB7900D0B897 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A1C5362318FB7900D0B897 /* NetworkManager.swift */; };
 		39B75BF22300F8E500F82C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3935A3512300B263009E3F23 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsSectionHeader.swift; sourceTree = "<group>"; };
 		396BCEAB2402379000D8F74A /* CollectionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExt.swift; sourceTree = "<group>"; };
 		39823CFF25C25A1F00A2B2A7 /* ScoreboardGameSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardGameSummaryView.swift; sourceTree = "<group>"; };
+		39823D0325C3EFC200A2B2A7 /* PenaltyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenaltyListView.swift; sourceTree = "<group>"; };
+		39823D0625C3F1FC00A2B2A7 /* GameEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventType.swift; sourceTree = "<group>"; };
 		3990B85823247BEF00145500 /* ScheduleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleRequest.swift; sourceTree = "<group>"; };
 		39A1C5362318FB7900D0B897 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		39C5614B23258D9500D6B196 /* TeamsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRequest.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			children = (
 				396512DF233DCE5B001CEFCB /* NHLTeamID.swift */,
 				396512E1233F2F99001CEFCB /* GameStatus.swift */,
+				39823D0625C3F1FC00A2B2A7 /* GameEventType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				396BCEA723F9E97700D8F74A /* ShotCounterView.swift */,
 				396BCEA9240233EF00D8F74A /* GameDetailsSectionHeader.swift */,
 				394BA86E2414CA8C003F4DAE /* GoalListView.swift */,
+				39823D0325C3EFC200A2B2A7 /* PenaltyListView.swift */,
 			);
 			path = "Game Details";
 			sourceTree = "<group>";
@@ -330,6 +336,8 @@
 				3935A34E2300B25F009E3F23 /* Bar_Down.xcdatamodeld in Sources */,
 				3935A3492300B25F009E3F23 /* AppDelegate.swift in Sources */,
 				391D086923348CD600DAF33F /* NSManagedObjectContextExt.swift in Sources */,
+				39823D0425C3EFC200A2B2A7 /* PenaltyListView.swift in Sources */,
+				39823D0725C3F1FC00A2B2A7 /* GameEventType.swift in Sources */,
 				391D086723347ADA00DAF33F /* PersistenceManager.swift in Sources */,
 				39366A8123164B51001A2907 /* Request.swift in Sources */,
 				3959562023407F1400B73BB1 /* ScoreboardScoreView.swift in Sources */,
@@ -491,11 +499,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = T36GJ569RT;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Bar\\ Down/Firebase",
-				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 				INFOPLIST_FILE = "Bar Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -506,7 +509,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 			};
 			name = Debug;
 		};
@@ -518,11 +520,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Bar Down\"/Preview\\ Content";
 				DEVELOPMENT_TEAM = T36GJ569RT;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Bar\\ Down/Firebase",
-				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 				INFOPLIST_FILE = "Bar Down/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -533,7 +530,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Bar\\ Down/Firebase";
 			};
 			name = Release;
 		};

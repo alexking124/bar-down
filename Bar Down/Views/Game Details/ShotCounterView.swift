@@ -19,7 +19,6 @@ struct ShotCounterView: View {
     
     var body: some View {
         HStack {
-//            Spacer()
             VStack(alignment: .leading) {
                 Text("Shots").font(Font.system(size: 24))
                 ForEach(0..<max(3, game.typedPeriods.count), id: \.self) { periodNumber in
@@ -32,8 +31,6 @@ struct ShotCounterView: View {
             Spacer()
         }
     }
-    
-//    func periodText
     
 }
 

@@ -11,6 +11,8 @@ import CoreData
 import Combine
 
 struct ContentView: View {
+
+  @Environment(\.managedObjectContext) var managedObjectContext
     
     private var fetchRequest: FetchRequest<Game>
     private var fetchedResults: FetchedResults<Game> {
@@ -31,7 +33,7 @@ struct ContentView: View {
         return List(fetchedResults) { game in
             ZStack {
               ScoreboardGameSummaryView(game: game)
-              NavigationLink(destination: GameDetailsView(game: game)) {
+              NavigationLink(destination: GameDetailsView(game: game).environment(\.managedObjectContext, managedObjectContext)) {
                 EmptyView()
               }.hidden().buttonStyle(PlainButtonStyle())
             }
