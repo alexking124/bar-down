@@ -17,14 +17,14 @@ struct GoalListView: View {
   }
 
   init(gameID: Int32) {
-    fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "eventIdentifier", ascending: true)],
+    fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "eventIndex", ascending: true)],
                                 predicate: GameEvent.predicate(gameID: gameID, eventType: .goal))
   }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             ForEach(fetchedResults) { goalEvent in
-              GoalScoredView(description: goalEvent.eventDescription ?? "", teamID: goalEvent.teamID)
+              GoalScoredView(description: goalEvent.eventDescription ?? "", clockText: "\(goalEvent.periodTime ?? "") \(goalEvent.periodNumber)", teamID: goalEvent.teamID)
             }
         }.padding()
     }
@@ -33,18 +33,22 @@ struct GoalListView: View {
 fileprivate struct GoalScoredView: View {
     
     private let description: String
+  private let clockText: String
     private let teamID: NHLTeamID
     
-    init(description: String, teamID: Int32) {
+  init(description: String, clockText: String, teamID: Int32) {
         self.description = description
+    self.clockText = clockText
         self.teamID = NHLTeamID(rawValue: Int(teamID)) ?? .nhl
     }
     
     var body: some View {
-        HStack {
-            Image(teamID.imageName).resizable().scaledToFit().frame(width: 35, height: 35, alignment: .center)
-            Text(description)
-                .font(Font.system(size: 14))
+      HStack(alignment: .top) {
+            Image(teamID.imageName).resizable().scaledToFit().frame(width: 35, height: 35, alignment: .top)
+          VStack(alignment: .leading, spacing: 2) {
+            Text(clockText).font(Font.system(size: 14))
+            Text(description).font(Font.system(size: 14))
+          }
             Spacer()
         }
     }

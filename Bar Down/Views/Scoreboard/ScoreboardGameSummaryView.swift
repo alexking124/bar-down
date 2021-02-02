@@ -43,8 +43,8 @@ fileprivate struct GameSummaryTopContentRow: View {
       VStack(alignment: .center, spacing: 2) {
         Text(game.scoreboardPrimaryText).font(.system(size: 18, weight: .medium))
         Text(game.scoreboardSecondaryText).font(.system(size: 14, weight: .light))
-        if let ppStrength = game.powerPlayStrength, game.powerPlaySecondsRemaining > 0 {
-          Text(ppStrength).font(.system(size: 14, weight: .light))
+        if let tertiaryText = game.scoreboardTertiaryText {
+          Text(tertiaryText).font(.system(size: 14, weight: .light))
         }
       }
       Spacer()

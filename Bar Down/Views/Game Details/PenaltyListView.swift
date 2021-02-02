@@ -29,7 +29,7 @@ struct PenaltyListView: View {
         }
       }.padding()
     } else {
-      Text("No Penalties")
+      Text("No Penalties").padding()
     }
   }
 }

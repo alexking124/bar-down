@@ -69,9 +69,6 @@ extension Game {
     public var scoreboardSecondaryText: String {
         switch status {
         case .live, .critical:
-          if isIntermission {
-            return "\(intermissionClockText) \(periodString) INT"
-          }
           return (clockString ?? "") + " " + periodString
         case .final, .reallyFinal:
             let statusText = status.statusText
@@ -85,6 +82,16 @@ extension Game {
             return status.statusText
         }
     }
+
+  public var scoreboardTertiaryText: String? {
+    if isIntermission {
+      return "\(intermissionClockText) INT"
+    }
+    if let ppStrength = powerPlayStrength, powerPlaySecondsRemaining > 0 {
+      return ppStrength
+    }
+    return nil
+  }
     
     public var typedPeriods: [GamePeriod] {
         return (periods?.allObjects as? [GamePeriod] ?? []).sorted { (periodA, periodB) -> Bool in
@@ -95,4 +102,13 @@ extension Game {
     public var typedEvents: [GameEvent] {
         return (events?.allObjects as? [GameEvent] ?? []).sorted { $0.eventIndex < $1.eventIndex }
     }
+}
+
+extension Game {
+  var gameDetailsEnabled: Bool {
+    switch status {
+    case .pregame, .scheduled, .scheduledTBD, .postponed: return false
+    default: return true
+    }
+  }
 }

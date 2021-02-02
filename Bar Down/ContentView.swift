@@ -33,9 +33,11 @@ struct ContentView: View {
         return List(fetchedResults) { game in
             ZStack {
               ScoreboardGameSummaryView(game: game)
-              NavigationLink(destination: GameDetailsView(game: game).environment(\.managedObjectContext, managedObjectContext)) {
-                EmptyView()
-              }.hidden().buttonStyle(PlainButtonStyle())
+              if game.gameDetailsEnabled {
+                NavigationLink(destination: GameDetailsView(game: game).environment(\.managedObjectContext, managedObjectContext)) {
+                  EmptyView()
+                }.hidden().buttonStyle(PlainButtonStyle())
+              }
             }
         }
     }
