@@ -50,7 +50,7 @@ struct ScheduledGame: Codable {
     let status: GameStatusResponse
     let teams: ScheduledGameTeams
     let linescore: LinescoreResponse
-  let seriesSummary: SeriesSummaryResponse?
+    let seriesSummary: SeriesSummaryResponse?
     
     var date: Date? {
         return DateFormatter.gameDateFormatter.date(from: gameDate)
@@ -58,11 +58,11 @@ struct ScheduledGame: Codable {
 }
 
 struct SeriesSummaryResponse: Codable {
-  let gameNumber: Int
-  let gameLabel: String
-  let necessary: Bool
-  let seriesStatus: String
-  let seriesStatusShort: String
+    let gameNumber: Int
+    let gameLabel: String
+    let necessary: Bool
+    let seriesStatus: String
+    let seriesStatusShort: String
 }
 
 struct ScheduledGameTeams: Codable {

@@ -23,6 +23,18 @@ extension Game {
         let toPredicate = NSPredicate(format: "%K < %@", "gameTime", dateTo as NSDate)
         return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
     }
+
+    static func pruningPredicateFor(date: Date, gameIDs: [Int]) -> NSPredicate {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(abbreviation: "EST") ?? .current
+        let dateFrom = calendar.startOfDay(for: date)
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom) ?? Date()
+
+        let fromPredicate = NSPredicate(format: "%K >= %@", "gameTime", dateFrom as NSDate)
+        let toPredicate = NSPredicate(format: "%K < %@", "gameTime", dateTo as NSDate)
+        let gameIDPredicate = NSPredicate(format: "NOT (gameID in %@)", gameIDs)
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate, gameIDPredicate])
+    }
 }
 
 extension Game {

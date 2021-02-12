@@ -147,10 +147,24 @@ class NetworkDispatch {
                                     }
                                     game.awayTeam = awayTeam
                                 }
+                            self.pruneDeletedGames(date: scheduleDay.date, fetchedGames: scheduleDay.games.map(\.gamePk), context: objectContext)
                         }
                 }
             }
             .store(in: &cancellables)
+    }
+
+    private func pruneDeletedGames(date: String, fetchedGames: [Int], context: NSManagedObjectContext) {
+        guard let gameDate = DateFormatter(format: .yearMonthDay).date(from: date) else {
+            return
+        }
+        let fetchPredicate = Game.pruningPredicateFor(date: gameDate, gameIDs: fetchedGames)
+        let fetchRequest: NSFetchRequest<Game> = Game.fetchRequest()
+        fetchRequest.predicate = fetchPredicate
+        if let result = try? context.fetch(fetchRequest) {
+            result.forEach { context.delete($0) }
+        }
+
     }
 
     private func updateTeam(id: Int) {
