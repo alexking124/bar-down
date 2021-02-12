@@ -126,7 +126,7 @@ class NetworkDispatch {
                                     
                                     game.gameID = Int32(gameData.gamePk)
                                     game.gameTime = gameData.date
-                                  if !currentGameDayGames.contains(where: { $0.gameID == gameData.gamePk }) {
+                                    if !currentGameDayGames.contains(where: { $0.gameID == gameData.gamePk }) {
                                         gameDay.addToGames(game)
                                     }
                                     let homeTeamID = gameData.teams.home.team.id
@@ -188,8 +188,10 @@ fileprivate extension Game {
         currentPeriod = Int32(linescoreResponse.currentPeriod ?? 1)
         powerPlayStrength = linescoreResponse.powerPlayStrength
         hasShootout = linescoreResponse.hasShootout
-      isIntermission = linescoreResponse.intermissionInfo?.inIntermission ?? false
-      intermissionTimeRemaining = Int32(linescoreResponse.intermissionInfo?.intermissionTimeRemaining ?? 0)
-      intermissionTimeElapsed = Int32(linescoreResponse.intermissionInfo?.intermissionTimeElapsed ?? 0)
+        isIntermission = linescoreResponse.intermissionInfo?.inIntermission ?? false
+        intermissionTimeRemaining = Int32(linescoreResponse.intermissionInfo?.intermissionTimeRemaining ?? 0)
+        intermissionTimeElapsed = Int32(linescoreResponse.intermissionInfo?.intermissionTimeElapsed ?? 0)
+        powerPlaySecondsRemaining = Int32(linescoreResponse.powerPlayInfo?.situationTimeRemaining ?? 0)
+        hasPowerPlay = linescoreResponse.powerPlayInfo?.inSituation ?? false
     }
 }

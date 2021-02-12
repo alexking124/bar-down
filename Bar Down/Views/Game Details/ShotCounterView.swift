@@ -11,18 +11,21 @@ import SwiftUI
 
 struct ShotCounterView: View {
     
-    @ObservedObject var game: Game
+    private var game: Game
+    private var fetchRequest: FetchRequest<GamePeriod>
     
     init(game: Game) {
         self.game = game
+        fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "periodNumber", ascending: true)],
+                                    predicate: GamePeriod.predicate(game: game))
     }
     
     var body: some View {
         HStack {
+            ShotCounterColumnView(columnTitle: "", homeText: game.homeTeam?.abbreviation ?? "", awayText: game.awayTeam?.abbreviation ?? "")
             VStack(alignment: .leading) {
-                Text("Shots").font(Font.system(size: 24))
-                ForEach(0..<max(3, game.typedPeriods.count), id: \.self) { periodNumber in
-                    return Text("\(self.game.typedPeriods[safe: periodNumber]?.ordinalNumber ?? "-")")
+                ForEach(0..<max(3, fetchRequest.wrappedValue.count), id: \.self) { periodNumber in
+                    return Text("\(fetchRequest.wrappedValue[safe: periodNumber]?.ordinalNumber ?? "-")")
                 }
                 if game.hasShootout {
                     Text("SO")
@@ -34,8 +37,24 @@ struct ShotCounterView: View {
     
 }
 
-private struct ShotCounterRow: View {
+fileprivate struct ShotCounterColumnView: View {
+
+    private let columnTitle: String
+    private let homeText: String
+    private let awayText: String
+
+    fileprivate init(columnTitle: String, homeText: String, awayText: String) {
+        self.columnTitle = columnTitle
+        self.homeText = homeText
+        self.awayText = awayText
+    }
+
     var body: some View {
-        Text("Shots")
+        VStack {
+            Text(columnTitle)
+                .fontWeight(.semibold)
+            Text(homeText)
+            Text(awayText)
+        }
     }
 }

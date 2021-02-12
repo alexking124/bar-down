@@ -68,14 +68,14 @@ fileprivate struct GameSummaryBottomContentRow: View {
   var body: some View {
     HStack {
       VStack(alignment: .leading, spacing: 0) {
-        Text(game.awayTeam?.locationName ?? "")
+        Text(game.hasStarted ? "\(game.awayTeamShots) SOG" : game.awayTeam?.locationName ?? "")
             .font(Font.system(size: 11, weight: .semibold, design: .default))
         Text(game.awayTeam?.teamName ?? "")
             .font(Font.system(size: 15, weight: .light, design: .default))
       }
       Spacer()
       VStack(alignment: .trailing, spacing: 0) {
-        Text(game.homeTeam?.locationName ?? "")
+        Text(game.hasStarted ? "\(game.homeTeamShots) SOG" : game.homeTeam?.locationName ?? "")
             .font(Font.system(size: 11, weight: .semibold, design: .default))
         Text(game.homeTeam?.teamName ?? "")
             .font(Font.system(size: 15, weight: .light, design: .default))

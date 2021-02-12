@@ -22,9 +22,9 @@ struct GameDetailsView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .center, spacing: 0) {
-                GameDetailsSectionHeader(title: "Shots: \(game.awayTeamShots) - \(game.homeTeamShots)")
+                GameDetailsSectionHeader(title: "Shots")
                 ShotCounterView(game: game)
-                GameDetailsSectionHeader(title: "Goals: \(game.awayTeamGoals) - \(game.homeTeamGoals)")
+                GameDetailsSectionHeader(title: "Goals")
               GoalListView(gameID: game.gameID)
               GameDetailsSectionHeader(title: "Penalties")
               PenaltyListView(gameID: game.gameID)

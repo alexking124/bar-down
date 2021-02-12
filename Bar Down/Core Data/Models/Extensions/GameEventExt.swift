@@ -10,9 +10,9 @@ import Foundation
 
 extension GameEvent {
 
-  static func predicate(gameID: Int32, eventType: GameEventType) -> NSPredicate {
-    return NSPredicate(format: "(%K BEGINSWITH %@) AND (%K = %@)", "eventIdentifier", "\(gameID)", "eventTypeId", eventType.rawValue)
-  }
+    static func predicate(gameID: Int32, eventType: GameEventType) -> NSPredicate {
+        return NSPredicate(format: "(%K BEGINSWITH %@) AND (%K = %@)", "eventIdentifier", "\(gameID)", "eventTypeId", eventType.rawValue)
+    }
 
     static func gameEventFetchPredicate(gameEventID: String) -> NSPredicate {
         return NSPredicate(format: "%K = %@", "eventIdentifier", "\(gameEventID)")
@@ -26,6 +26,12 @@ extension GameEvent {
         periodTime = response.about.periodTime
         periodNumber = Int32(response.about.period)
         eventIndex = Int32(response.about.eventIdx)
+        periodOrdinal = response.about.ordinalNum
+        emptyNet = response.result.emptyNet ?? false
+        secondaryType = response.result.secondaryType
+        gameWinningGoal = response.result.gameWinningGoal ?? false
+        penaltyMinutes = Int32(response.result.penaltyMinutes ?? 0)
+        penaltySeverity = response.result.penaltySeverity
     }
 
 }
@@ -33,5 +39,9 @@ extension GameEvent {
 extension GameEvent {
     public var id: String {
         return eventIdentifier ?? ""
+    }
+
+    var nhlTeamID: NHLTeamID {
+        NHLTeamID(rawValue: Int(teamID)) ?? .nhl
     }
 }

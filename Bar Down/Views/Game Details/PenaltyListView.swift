@@ -17,15 +17,22 @@ struct PenaltyListView: View {
   }
 
   init(gameID: Int32) {
-    fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "eventIdentifier", ascending: true)],
+    fetchRequest = FetchRequest(sortDescriptors: [NSSortDescriptor(key: "eventIndex", ascending: true)],
                                 predicate: GameEvent.predicate(gameID: gameID, eventType: .penalty))
   }
 
   var body: some View {
     if fetchedResults.count > 0 {
-      VStack(alignment: .leading, spacing: 2) {
+      VStack(alignment: .leading, spacing: 4) {
         ForEach(fetchedResults) { penalty in
-          Text(penalty.eventDescription ?? "").font(Font.system(size: 14))
+                HStack(alignment: .top) {
+                  Image((NHLTeamID(rawValue: Int(penalty.teamID)) ?? .nhl).imageName).resizable().scaledToFit().frame(width: 35, height: 35, alignment: .top)
+                    VStack(alignment: .leading, spacing: 2) {
+                      Text("\(penalty.periodTime ?? "") \(penalty.periodOrdinal ?? "")").font(Font.system(size: 14))
+                      Text(penalty.eventDescription ?? "").font(Font.system(size: 14))
+                    }
+                      Spacer()
+                  }
         }
       }.padding()
     } else {

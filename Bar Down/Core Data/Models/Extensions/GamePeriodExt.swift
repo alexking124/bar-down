@@ -10,7 +10,9 @@ import Foundation
 
 extension GamePeriod {
     
-    
+    static func predicate(game: Game) -> NSPredicate {
+        return NSPredicate(format: "game = %@", game)
+    }
     
 }
 

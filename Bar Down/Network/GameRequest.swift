@@ -46,6 +46,7 @@ struct LinescoreResponse: Codable {
     let hasShootout: Bool
     let powerPlayStrength: String
     let intermissionInfo: IntermissionInfoResponse?
+    let powerPlayInfo: PowerPlayInfoResponse?
     let teams: LinescoreTeamsResponse
 }
 
@@ -66,6 +67,12 @@ struct IntermissionInfoResponse: Codable {
     let intermissionTimeRemaining: Int
     let intermissionTimeElapsed: Int
     let inIntermission: Bool
+}
+
+struct PowerPlayInfoResponse: Codable {
+    let situationTimeRemaining: Int
+    let situationTimeElapsed: Int
+    let inSituation: Bool
 }
 
 struct LinescorePeriodResponse: Codable {
@@ -97,14 +104,17 @@ struct GamePlayResponse: Codable {
         let eventCode: String
         let description: String
         let strength: Strength?
-      let secondaryType: String?
-      let emptyNet: Bool?
-      let gameWinningGoal: Bool?
+        let secondaryType: String?
+        let emptyNet: Bool?
+        let gameWinningGoal: Bool?
+        let penaltySeverity: String?
+        let penaltyMinutes: Int?
     }
     struct About: Codable {
         let period: Int
         let periodTime: String
         let eventIdx: Int
+        let ordinalNum: String
     }
     struct Player: Codable {
         struct Details: Codable {

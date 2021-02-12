@@ -40,9 +40,9 @@ extension Game {
         return currentPeriod > 3
     }
 
-  var intermissionClockText: String {
-    DateFormatter.intermissionClockTime.string(from: Date(timeIntervalSinceReferenceDate: TimeInterval(intermissionTimeRemaining)))
-  }
+    var intermissionClockText: String {
+        DateFormatter.intermissionClockTime.string(from: Date(timeIntervalSinceReferenceDate: TimeInterval(intermissionTimeRemaining)))
+    }
     
     var periodString: String {
         switch currentPeriod {
@@ -58,7 +58,7 @@ extension Game {
     public var scoreboardPrimaryText: String {
         switch status {
         case .scheduledTBD:
-          return "TBD"
+            return "TBD"
         case .pregame, .scheduled, .postponed:
             return gameTime.map { DateFormatter.scheduledGameTimeFormatter.string(from: $0) } ?? ""
         default:
@@ -69,7 +69,7 @@ extension Game {
     public var scoreboardSecondaryText: String {
         switch status {
         case .live, .critical:
-          return (clockString ?? "") + " " + periodString
+            return (clockString ?? "") + " " + periodString
         case .final, .reallyFinal:
             let statusText = status.statusText
             if hasShootout {
@@ -83,32 +83,42 @@ extension Game {
         }
     }
 
-  public var scoreboardTertiaryText: String? {
-    if isIntermission {
-      return "\(intermissionClockText) INT"
+    public var scoreboardTertiaryText: String? {
+        if isIntermission {
+            return "\(intermissionClockText) INT"
+        }
+        if hasPowerPlay, isInProgress, let ppStrength = powerPlayStrength, powerPlaySecondsRemaining > 0 {
+            return ppStrength
+        }
+        return nil
     }
-    if let ppStrength = powerPlayStrength, powerPlaySecondsRemaining > 0 {
-      return ppStrength
-    }
-    return nil
-  }
     
     public var typedPeriods: [GamePeriod] {
         return (periods?.allObjects as? [GamePeriod] ?? []).sorted { (periodA, periodB) -> Bool in
             periodA.periodNumber < periodB.periodNumber
         }
     }
-    
-    public var typedEvents: [GameEvent] {
-        return (events?.allObjects as? [GameEvent] ?? []).sorted { $0.eventIndex < $1.eventIndex }
-    }
 }
 
 extension Game {
-  var gameDetailsEnabled: Bool {
-    switch status {
-    case .pregame, .scheduled, .scheduledTBD, .postponed: return false
-    default: return true
+    var gameDetailsEnabled: Bool {
+        switch status {
+        case .pregame, .scheduled, .scheduledTBD, .postponed: return false
+        default: return true
+        }
     }
-  }
+
+    var isInProgress: Bool {
+        switch status {
+        case .live, .critical: return true
+        default: return false
+        }
+    }
+
+    var hasStarted: Bool {
+        switch status {
+        case .live, .critical, .final, .reallyFinal: return true
+        default: return false
+        }
+    }
 }

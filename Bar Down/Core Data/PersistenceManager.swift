@@ -42,22 +42,14 @@ class PersistenceManager {
             guard let self = self else { return }
             persistClosure(context)
             do {
-                try context.save()
+                if context.hasChanges {
+                    try context.save()
+                }
             } catch {
                 print(error)
             }
             self.saveContext()
         }
-//        persistentContainer.performBackgroundTask { context in
-//            context.mergePolicy = NSOverwriteMergePolicy
-//            print(context.parent)
-//            persistClosure(context)
-//            do {
-//                try context.save()
-//            } catch {
-//                print(error)
-//            }
-//        }
     }
     
     private func saveContext() {
