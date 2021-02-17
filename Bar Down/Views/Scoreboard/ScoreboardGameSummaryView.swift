@@ -70,15 +70,31 @@ fileprivate struct GameSummaryBottomContentRow: View {
       VStack(alignment: .leading, spacing: 0) {
         Text(game.hasStarted ? "\(game.awayTeamShots) SOG" : game.awayTeam?.locationName ?? "")
             .font(Font.system(size: 11, weight: .semibold, design: .default))
-        Text(game.awayTeam?.teamName ?? "")
-            .font(Font.system(size: 15, weight: .light, design: .default))
+        HStack {
+            Text(game.awayTeam?.teamName ?? "")
+                .font(Font.system(size: 15, weight: .light, design: .default))
+            if game.awayPowerPlay && game.isInProgress {
+                Text("PP")
+            }
+            if game.awayGoaliePulled && game.isInProgress {
+                Text("EN")
+            }
+        }
       }
       Spacer()
       VStack(alignment: .trailing, spacing: 0) {
         Text(game.hasStarted ? "\(game.homeTeamShots) SOG" : game.homeTeam?.locationName ?? "")
             .font(Font.system(size: 11, weight: .semibold, design: .default))
-        Text(game.homeTeam?.teamName ?? "")
-            .font(Font.system(size: 15, weight: .light, design: .default))
+        HStack {
+            if game.homeGoaliePulled && game.isInProgress {
+                Text("EN")
+            }
+            if game.homePowerPlay && game.isInProgress {
+                Text("PP")
+            }
+            Text(game.homeTeam?.teamName ?? "")
+                .font(Font.system(size: 15, weight: .light, design: .default))
+        }
       }
     }
   }

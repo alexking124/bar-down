@@ -51,7 +51,8 @@ fileprivate struct GoalScoredView: View {
             Image(goalEvent.nhlTeamID.imageName).resizable().scaledToFit().frame(width: 35, height: 35, alignment: .top)
             VStack(alignment: .leading, spacing: 2) {
                 HStack {
-                    Text("\(goalEvent.periodTime ?? "") \(goalEvent.periodOrdinal ?? "")").font(Font.system(size: 14))
+                    Text("\(goalEvent.periodTime ?? "") \(goalEvent.periodOrdinal ?? "")")
+                        .font(Font.system(size: 14))
                     if let strength = goalEvent.strengthCode.map { StrengthCode(code: $0) }, strength != .even {
                         GoalModifierView(modifierText: strength.rawValue)
                     }
@@ -59,7 +60,9 @@ fileprivate struct GoalScoredView: View {
                         GoalModifierView(modifierText: "EN")
                     }
                 }
-                Text(goalEvent.eventDescription ?? "").font(Font.system(size: 14))
+                Text(goalEvent.eventDescription ?? "")
+                    .font(Font.system(size: 14))
+                    .fixedSize(horizontal: false, vertical: true)
             }
             Spacer()
         }

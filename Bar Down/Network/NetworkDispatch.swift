@@ -198,6 +198,12 @@ fileprivate extension Game {
         awayTeamGoals = Int32(linescoreResponse.teams.away.goals)
         homeTeamShots = Int32(linescoreResponse.teams.home.shotsOnGoal)
         awayTeamShots = Int32(linescoreResponse.teams.away.shotsOnGoal)
+        homePowerPlay = linescoreResponse.teams.home.powerPlay
+        awayPowerPlay = linescoreResponse.teams.away.powerPlay
+        homeGoaliePulled = linescoreResponse.teams.home.goaliePulled
+        awayGoaliePulled = linescoreResponse.teams.away.goaliePulled
+        homeNumSkaters = Int32(linescoreResponse.teams.home.numSkaters)
+        awayNumSkaters = Int32(linescoreResponse.teams.away.numSkaters)
         clockString = linescoreResponse.currentPeriodTimeRemaining
         currentPeriod = Int32(linescoreResponse.currentPeriod ?? 1)
         powerPlayStrength = linescoreResponse.powerPlayStrength

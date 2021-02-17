@@ -28,8 +28,11 @@ struct PenaltyListView: View {
                 HStack(alignment: .top) {
                   Image((NHLTeamID(rawValue: Int(penalty.teamID)) ?? .nhl).imageName).resizable().scaledToFit().frame(width: 35, height: 35, alignment: .top)
                     VStack(alignment: .leading, spacing: 2) {
-                      Text("\(penalty.periodTime ?? "") \(penalty.periodOrdinal ?? "")").font(Font.system(size: 14))
-                      Text(penalty.eventDescription ?? "").font(Font.system(size: 14))
+                      Text("\(penalty.periodTime ?? "") \(penalty.periodOrdinal ?? "")")
+                        .font(Font.system(size: 14))
+                      Text(penalty.eventDescription ?? "")
+                        .font(Font.system(size: 14))
+                        .fixedSize(horizontal: false, vertical: true)
                     }
                       Spacer()
                   }
