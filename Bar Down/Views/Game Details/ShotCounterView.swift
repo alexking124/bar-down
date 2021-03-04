@@ -22,17 +22,28 @@ struct ShotCounterView: View {
     
     var body: some View {
         HStack {
-            ShotCounterColumnView(columnTitle: "", homeText: game.homeTeam?.abbreviation ?? "", awayText: game.awayTeam?.abbreviation ?? "")
-            VStack(alignment: .leading) {
-                ForEach(0..<max(3, fetchRequest.wrappedValue.count), id: \.self) { periodNumber in
-                    return Text("\(fetchRequest.wrappedValue[safe: periodNumber]?.ordinalNumber ?? "-")")
-                }
-                if game.hasShootout {
-                    Text("SO")
-                }
-            }.padding()
+            ShotCounterColumnView(columnTitle: " ", homeText: game.homeTeam?.abbreviation ?? "", awayText: game.awayTeam?.abbreviation ?? "")
             Spacer()
-        }
+            ForEach(0..<max(3, fetchRequest.wrappedValue.count), id: \.self) { periodIndex -> ShotCounterColumnView in
+                let title: String
+                if periodIndex < 3 {
+                    title = NumberFormatter.ordinalFormatter.string(from: NSNumber(value: periodIndex+1)) ?? " "
+                } else if periodIndex == 3 {
+                    title = "OT"
+                } else {
+                    title = "\(periodIndex+1)OT"
+                }
+                if let gamePeriod = fetchRequest.wrappedValue[safe: periodIndex] {
+                    return ShotCounterColumnView(columnTitle: title,
+                                                 homeText: "\(gamePeriod.homeShots)",
+                                                 awayText: "\(gamePeriod.awayShots)")
+                } else {
+                    return ShotCounterColumnView(columnTitle: title, homeText: "-", awayText: "-")
+                }
+            }
+            ShotCounterColumnView(columnTitle: "T", homeText: "\(game.homeTeamShots)", awayText: "\(game.awayTeamShots)")
+                .padding(.leading, 6)
+        }.padding()
     }
     
 }
@@ -53,8 +64,8 @@ fileprivate struct ShotCounterColumnView: View {
         VStack {
             Text(columnTitle)
                 .fontWeight(.semibold)
-            Text(homeText)
             Text(awayText)
+            Text(homeText)
         }
     }
 }

@@ -12,7 +12,7 @@ enum BarDownDateFormat: String {
     case yearMonthDay = "yyyy-MM-dd"
     case scheduledTime = "h:mm a"
     case displayDate = "EEE, MMM dd yyyy"
-  case intermissionClockTime = "m:ss"
+    case intermissionClockTime = "m:ss"
 }
 
 extension DateFormatter {
@@ -24,12 +24,12 @@ extension DateFormatter {
     }()
     
     static let scheduledGameTimeFormatter: DateFormatter = {
-      DateFormatter(format: .scheduledTime).withCurrentLocale()
+        DateFormatter(format: .scheduledTime).withCurrentLocale()
     }()
 
-  static let intermissionClockTime: DateFormatter = {
-    DateFormatter(format: .intermissionClockTime)
-  }()
+    static func clockTimeString(seconds: Int) -> String {
+        DateFormatter(format: .intermissionClockTime).string(from: Date(timeIntervalSinceReferenceDate: TimeInterval(seconds)))
+    }
     
     convenience init(format: BarDownDateFormat) {
         self.init(dateFormat: format.rawValue)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390E21E025E4BA3D0084DF51 /* NumberFormatterExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390E21DF25E4BA3D0084DF51 /* NumberFormatterExt.swift */; };
+		390E21E625F0908D0084DF51 /* GameContentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390E21E525F0908D0084DF51 /* GameContentRequest.swift */; };
 		391D086723347ADA00DAF33F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391D086623347ADA00DAF33F /* PersistenceManager.swift */; };
 		391D086923348CD600DAF33F /* NSManagedObjectContextExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */; };
 		391D086B23349F9F00DAF33F /* NetworkDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391D086A23349F9F00DAF33F /* NetworkDispatch.swift */; };
@@ -47,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390E21DF25E4BA3D0084DF51 /* NumberFormatterExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatterExt.swift; sourceTree = "<group>"; };
+		390E21E525F0908D0084DF51 /* GameContentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentRequest.swift; sourceTree = "<group>"; };
 		391D086623347ADA00DAF33F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExt.swift; sourceTree = "<group>"; };
 		391D086A23349F9F00DAF33F /* NetworkDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatch.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				39C5614B23258D9500D6B196 /* TeamsRequest.swift */,
 				391D086A23349F9F00DAF33F /* NetworkDispatch.swift */,
 				396512E3233F3482001CEFCB /* GameRequest.swift */,
+				390E21E525F0908D0084DF51 /* GameContentRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				39C561582325BA4E00D6B196 /* DateFormatterExt.swift */,
 				391D086823348CD600DAF33F /* NSManagedObjectContextExt.swift */,
 				396BCEAB2402379000D8F74A /* CollectionExt.swift */,
+				390E21DF25E4BA3D0084DF51 /* NumberFormatterExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				391D086923348CD600DAF33F /* NSManagedObjectContextExt.swift in Sources */,
 				39823D0425C3EFC200A2B2A7 /* PenaltyListView.swift in Sources */,
 				39823D0725C3F1FC00A2B2A7 /* GameEventType.swift in Sources */,
+				390E21E625F0908D0084DF51 /* GameContentRequest.swift in Sources */,
 				391D086723347ADA00DAF33F /* PersistenceManager.swift in Sources */,
 				39366A8123164B51001A2907 /* Request.swift in Sources */,
 				3959562023407F1400B73BB1 /* ScoreboardScoreView.swift in Sources */,
@@ -361,6 +368,7 @@
 				3935A34B2300B25F009E3F23 /* SceneDelegate.swift in Sources */,
 				396BCEAA240233EF00D8F74A /* GameDetailsSectionHeader.swift in Sources */,
 				394BA86F2414CA8C003F4DAE /* GoalListView.swift in Sources */,
+				390E21E025E4BA3D0084DF51 /* NumberFormatterExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

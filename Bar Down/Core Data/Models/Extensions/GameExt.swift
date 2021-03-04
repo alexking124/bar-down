@@ -53,7 +53,7 @@ extension Game {
     }
 
     var intermissionClockText: String {
-        DateFormatter.intermissionClockTime.string(from: Date(timeIntervalSinceReferenceDate: TimeInterval(intermissionTimeRemaining)))
+        DateFormatter.clockTimeString(seconds: Int(intermissionTimeRemaining))
     }
     
     var periodString: String {
@@ -99,8 +99,10 @@ extension Game {
         if isIntermission {
             return "\(intermissionClockText) INT"
         }
-        if hasPowerPlay, isInProgress, let ppStrength = powerPlayStrength, powerPlaySecondsRemaining > 0 {
-            return ppStrength
+        if hasPowerPlay, isInProgress, powerPlaySecondsRemaining > 0 {
+            let maxSkaters = max(homeNumSkaters, awayNumSkaters)
+            let minSkaters = min(homeNumSkaters, awayNumSkaters)
+            return "\(DateFormatter.clockTimeString(seconds: Int(powerPlaySecondsRemaining))) \(maxSkaters)-on-\(minSkaters)"
         }
         return nil
     }
