@@ -83,13 +83,10 @@ extension Game {
         case .live, .critical:
             return (clockString ?? "") + " " + periodString
         case .final, .reallyFinal:
-            let statusText = status.statusText
-            if hasShootout {
-                return statusText + " SO"
-            } else if hasOvertime {
-                return statusText + " OT"
+            if hasOvertime {
+                return "\(status.statusText) \(periodString)"
             }
-            return statusText
+            return status.statusText
         default:
             return status.statusText
         }

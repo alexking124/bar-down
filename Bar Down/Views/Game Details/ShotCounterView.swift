@@ -31,7 +31,7 @@ struct ShotCounterView: View {
                 } else if periodIndex == 3 {
                     title = "OT"
                 } else {
-                    title = "\(periodIndex+1)OT"
+                    title = "\(periodIndex-2)OT"
                 }
                 if let gamePeriod = fetchRequest.wrappedValue[safe: periodIndex] {
                     return ShotCounterColumnView(columnTitle: title,
