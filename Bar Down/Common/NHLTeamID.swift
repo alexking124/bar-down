@@ -42,6 +42,7 @@ enum NHLTeamID: Int, CaseIterable, Identifiable {
     case wpg = 52
     case ari = 53
     case vgk = 54
+    case sea = 55
     case atlantic = 87
     case metropolitan = 88
     case central = 89
