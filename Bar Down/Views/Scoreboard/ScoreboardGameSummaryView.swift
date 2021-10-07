@@ -21,6 +21,9 @@ struct ScoreboardGameSummaryView: View {
         VStack {
             GameSummaryTopContentRow(game: game)
             GameSummaryBottomContentRow(game: game)
+            if let gameLabel = game.seriesGameLabel, let seriesStatus = game.seriesStatus {
+                GameSummarySeriesStatusRow(text: "\(gameLabel) | \(seriesStatus)")
+            }
         }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
     }
 }
@@ -111,4 +114,18 @@ fileprivate struct SkaterDifferentialStatusView: View {
             .background(Color.blue.opacity(0.75))
             .cornerRadius(4)
     }
+}
+
+fileprivate struct GameSummarySeriesStatusRow: View {
+
+    private let seriesStatusText: String
+    init(text: String) {
+        self.seriesStatusText = text
+    }
+
+    var body: some View {
+        Text(seriesStatusText)
+            .font(Font.system(size: 11, weight: .semibold, design: .default))
+    }
+
 }

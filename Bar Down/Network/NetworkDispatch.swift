@@ -121,7 +121,9 @@ class NetworkDispatch {
                                     let gameStatus = GameStatus(rawValue: Int(gameData.status.codedGameState) ?? 0)
                                     game.gameStatus = Int32(gameStatus?.rawValue ?? 0)
                                     game.sortStatus = Int32(gameStatus?.sortStatus ?? 0)
-                                    
+                                    game.gameType = gameData.gameType
+
+                                    gameData.seriesSummary.map { game.apply(seriesSummary: $0) }
                                     game.apply(linescoreResponse: gameData.linescore)
                                     
                                     game.gameID = Int32(gameData.gamePk)
@@ -213,5 +215,11 @@ fileprivate extension Game {
         intermissionTimeElapsed = Int32(linescoreResponse.intermissionInfo?.intermissionTimeElapsed ?? 0)
         powerPlaySecondsRemaining = Int32(linescoreResponse.powerPlayInfo?.situationTimeRemaining ?? 0)
         hasPowerPlay = linescoreResponse.powerPlayInfo?.inSituation ?? false
+    }
+
+    func apply(seriesSummary: SeriesSummaryResponse) {
+        seriesStatus = seriesSummary.seriesStatusShort
+        seriesGameLabel = seriesSummary.gameLabel
+        seriesGameNumber = Int32(seriesSummary.gameNumber)
     }
 }

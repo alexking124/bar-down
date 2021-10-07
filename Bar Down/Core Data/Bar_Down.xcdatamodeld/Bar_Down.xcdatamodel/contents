@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D64" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Game" representedClassName="Game" syncable="YES" codeGenerationType="class">
         <attribute name="awayGoaliePulled" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="awayNumSkaters" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -24,6 +24,9 @@
         <attribute name="isIntermission" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="powerPlaySecondsRemaining" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="powerPlayStrength" optional="YES" attributeType="String"/>
+        <attribute name="seriesGameLabel" optional="YES" attributeType="String"/>
+        <attribute name="seriesGameNumber" optional="YES" attributeType="Integer 32" usesScalarValueType="YES"/>
+        <attribute name="seriesStatus" optional="YES" attributeType="String"/>
         <attribute name="sortStatus" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="awayTeam" maxCount="1" deletionRule="Nullify" destinationEntity="Team"/>
         <relationship name="events" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GameEvent" inverseName="game" inverseEntity="GameEvent"/>
@@ -101,7 +104,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="464"/>
+        <element name="Game" positionX="-312.5234375" positionY="-46.72265625" width="138.375" height="509"/>
         <element name="GameDay" positionX="27" positionY="144" width="128" height="73"/>
         <element name="GameEvent" positionX="-99" positionY="117" width="128" height="269"/>
         <element name="GameEventPlayer" positionX="-108" positionY="117" width="128" height="104"/>
