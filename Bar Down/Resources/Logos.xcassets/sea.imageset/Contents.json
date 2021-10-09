@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "nhl-logo.pdf",
+      "filename" : "SEA_light.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,12 +11,15 @@
           "value" : "dark"
         }
       ],
-      "filename" : "nhl-logo-1.pdf",
+      "filename" : "SEA_dark.pdf",
       "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }
