@@ -87,6 +87,10 @@ extension Game {
                 return "\(status.statusText) \(periodString)"
             }
             return status.statusText
+        case .scheduled, .scheduledTBD:
+            if gameTime.map({ Calendar.current.isDateInToday($0) }) == true { return "Today" }
+            if gameTime.map({ Calendar.current.isDateInTomorrow($0) }) == true { return "Tomorrow" }
+            return status.statusText
         default:
             return status.statusText
         }
