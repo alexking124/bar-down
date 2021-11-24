@@ -30,15 +30,18 @@ struct ContentView: View {
     }
     
     var body: some View {
-        return List(fetchedResults) { game in
-            ZStack {
-              ScoreboardGameSummaryView(game: game)
-              if game.gameDetailsEnabled {
-                NavigationLink(destination: GameDetailsView(game: game).environment(\.managedObjectContext, managedObjectContext)) {
-                  EmptyView()
-                }.hidden().buttonStyle(PlainButtonStyle())
-              }
-            }
+        ScrollView(.vertical) {
+            VStack {
+                ForEach(fetchedResults) { game in
+                    if game.gameDetailsEnabled {
+                        NavigationLink(destination: GameDetailsView(game: game).environment(\.managedObjectContext, managedObjectContext)) {
+                            ScoreboardGameSummaryView(game: game)
+                        }.buttonStyle(.plain)
+                    } else {
+                        ScoreboardGameSummaryView(game: game)
+                    }
+                }
+            }.padding()
         }
     }
 }

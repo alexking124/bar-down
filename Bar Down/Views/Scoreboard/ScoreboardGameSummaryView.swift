@@ -24,7 +24,9 @@ struct ScoreboardGameSummaryView: View {
             if let gameLabel = game.seriesGameLabel, let seriesStatus = game.seriesStatus {
                 GameSummarySeriesStatusRow(text: "\(gameLabel) | \(seriesStatus)")
             }
-        }.padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
+        }
+        .padding(EdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4))
+        .contentShape(Rectangle())
     }
 }
 
